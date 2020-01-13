@@ -1,0 +1,23 @@
+
+# Environment for the metaservice using Flask.
+
+# Pull base image.
+FROM ubuntu:18.04
+
+# Install packages.
+RUN \
+    useradd rds && \
+    apt-get update && \
+    apt-get install -y \
+        python3-flask && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm -rf /var/cache/*
+
+# Setup environment.
+
+# Switch user and working directory.
+USER rds
+WORKDIR /home/rds
+
+# Define default command.
+CMD ["bash"]
