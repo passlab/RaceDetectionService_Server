@@ -1,9 +1,10 @@
 
 # Environment for the microservice ThreadSanitizer.
+# Clang 6 is installed from the Ubuntu repository.
 # Clang 10 is installed from the official LLVM repository.
 # To use Clang 10, a "-10" postfix should be added in most cases.
 # e.g. clang -> clang-10, clang++ -> clang++-10
-# Please check /usr/bin for all the available Clang tools.
+# Please check /usr/bin for all the available Clang 10 tools.
 
 # Pull base image.
 FROM ubuntu:18.04
@@ -22,6 +23,7 @@ RUN \
     apt-get update && \
     apt-get install -y \ 
         build-essential \
+        clang \
         clang-10 \
         cmake \
         curl \
