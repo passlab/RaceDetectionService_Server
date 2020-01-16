@@ -8,7 +8,7 @@
 	cd inspector_2019_update5
 	sudo ./install.sh
 	
-1. The commend line to use inspector:
+1. The command line to use inspector:
 
 	```	
 	export OMP_NUM_THREADS=5
@@ -52,7 +52,7 @@
 	export PATH=$(pwd)/install/bin:$PATH
  	export LD_LIBRARY_PATH=$(pwd)/install/lib:$LD_LIBRARY_PATH
 
-1. The commend line to use ThreadSanitizer:
+1. The command line to use ThreadSanitizer:
  
  	```	
 	clang DRB001-antidep1-orig-yes.c -fopenmp -fsanitize=thread -fPIE -pie -g -o myApp
@@ -128,7 +128,7 @@
 	export PATH=${LLVM_INSTALL}/bin:${PATH}"
 	export LD_LIBRARY_PATH=${LLVM_INSTALL}/lib:${LD_LIBRARY_PATH}"
 
-1. The commend line to use Archer:
+1. The command line to use Archer:
  
  	```	
  	clang-archer DRB104-nowait-barrier-orig-no.c -o myApp -larcher
