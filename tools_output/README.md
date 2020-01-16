@@ -1,17 +1,25 @@
-To install inspector:
+## Tools
+
+1. To install inspector:
+
+	```	
 	Download inspector for linux from Intel inspector website: https://software.intel.com/en-us/inspector/choose-download
 	tar -czvf inspector_2019_update5.tar.gz
 	cd inspector_2019_update5
 	sudo ./install.sh
+	
+1. The commend line to use inspector:
 
-The commend line to use inspector:
+	```	
 	export OMP_NUM_THREADS=5
 	clang DRB001-antidep1-orig-yes.c -o myApp
 	inspxe-cl -collect ti3 -result-dir Result  ./myapp
 	inspxe-cl -create-suppression-file ./mySupFile -result-dir Result
 	inspxe-cl -report problems -result-dir Result
 
-To install ThreadSanitizer:
+1. To install ThreadSanitizer:
+
+	```	
 	wget https://releases.llvm.org/10.0.0/llvm-10.0.0.src.tar.xz
  	wget https://releases.llvm.org/10.0.0/cfe-10.0.0.src.tar.xz
  	wget https://releases.llvm.org/10.0.0/openmp-10.0.0.src.tar.xz
@@ -44,12 +52,16 @@ To install ThreadSanitizer:
 	export PATH=$(pwd)/install/bin:$PATH
  	export LD_LIBRARY_PATH=$(pwd)/install/lib:$LD_LIBRARY_PATH
 
-The commend line to use ThreadSanitizer:
+1. The commend line to use ThreadSanitizer:
+ 
+ 	```	
 	clang DRB001-antidep1-orig-yes.c -fopenmp -fsanitize=thread -fPIE -pie -g -o myApp
 	./myApp 
 
-To install Archer:
-	export ARCHER_BUILD=$PWD/ArcherBuild
+1. To install Archer:
+ 
+ 	```	
+ 	export ARCHER_BUILD=$PWD/ArcherBuild
 	mkdir $ARCHER_BUILD && cd $ARCHER_BUILD
 	git clone https://github.com/llvm-mirror/llvm.git llvm_src
 	cd llvm_src
@@ -116,6 +128,8 @@ To install Archer:
 	export PATH=${LLVM_INSTALL}/bin:${PATH}"
 	export LD_LIBRARY_PATH=${LLVM_INSTALL}/lib:${LD_LIBRARY_PATH}"
 
-The commend line to use Archer:
-	 clang-archer DRB104-nowait-barrier-orig-no.c -o myApp -larcher
+1. The commend line to use Archer:
+ 
+ 	```	
+ 	clang-archer DRB104-nowait-barrier-orig-no.c -o myApp -larcher
 	./myApp 
