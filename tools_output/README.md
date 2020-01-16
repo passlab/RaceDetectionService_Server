@@ -17,6 +17,8 @@
 	inspxe-cl -create-suppression-file ./mySupFile -result-dir Result
 	inspxe-cl -report problems -result-dir Result
 
+   Check the report to see whether you can locate the binary address of a datarace and then use `addr2line` to locate line number in the source code. 
+
 1. To install ThreadSanitizer:
 
 	```	
