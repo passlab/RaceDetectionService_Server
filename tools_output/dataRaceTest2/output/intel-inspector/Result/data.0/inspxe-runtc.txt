@@ -1,0 +1,19 @@
+
+=== Start: [2020/01/15 19:24:39] === 
+Analysis started...
+Result file: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result/Result.inspxe 
+Found target process /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myApp (PID = 9701). Analysis started... 
+Loaded module: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myApp. 
+Loaded module: /lib64/ld-linux-x86-64.so.2. 
+Loaded module: [vdso]. 
+Loaded module: /lib/x86_64-linux-gnu/libc.so.6. 
+Unloaded module: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myApp. 
+Unloaded module: /lib64/ld-linux-x86-64.so.2. 
+Unloaded module: [vdso]. 
+Unloaded module: /lib/x86_64-linux-gnu/libc.so.6. 
+Process /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myApp (PID = 9701) has terminated. 
+Warning: Failed to find more than one thread. Ensure that your program is multithreaded.
+Application exit code: 0 
+Result file: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result/Result.inspxe 
+Analysis completed
+=== End: [2020/01/15 19:24:43] === 

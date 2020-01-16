@@ -1,0 +1,36 @@
+
+=== Start: [2020/01/15 19:08:34] === 
+Analysis started...
+Result file: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result/Result.inspxe 
+Found target process /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myapp (PID = 9437). Analysis started... 
+Loaded module: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myapp. 
+Loaded module: /lib64/ld-linux-x86-64.so.2. 
+Loaded module: [vdso]. 
+Loaded module: /usr/lib/x86_64-linux-gnu/libomp.so.5. 
+Loaded module: /home/yshi10/ARCHER/ArcherBuild/llvm_bootstrap/lib/libomptarget.so. 
+Loaded module: /lib/x86_64-linux-gnu/libpthread.so.0. 
+Loaded module: /lib/x86_64-linux-gnu/libc.so.6. 
+Loaded module: /lib/x86_64-linux-gnu/libdl.so.2. 
+Loaded module: /usr/lib/x86_64-linux-gnu/libstdc++.so.6. 
+Loaded module: /lib/x86_64-linux-gnu/libgcc_s.so.1. 
+Loaded module: /lib/x86_64-linux-gnu/libm.so.6. 
+Loaded module: /home/yshi10/intel/inspector_2019.5.0.602103/lib64/runtime/libittnotify.so. 
+Warning: One or more threads in the application accessed the stack of another thread. This may indicate one or more bugs in your application. Setting the Inspector to detect data races on stack accesses and running another analysis may help you locate these and other bugs.
+Warning: Detected fatal signal in the application. See result for details. 
+Unloaded module: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myapp. 
+Unloaded module: /lib64/ld-linux-x86-64.so.2. 
+Unloaded module: [vdso]. 
+Unloaded module: /usr/lib/x86_64-linux-gnu/libomp.so.5. 
+Unloaded module: /home/yshi10/ARCHER/ArcherBuild/llvm_bootstrap/lib/libomptarget.so. 
+Unloaded module: /lib/x86_64-linux-gnu/libpthread.so.0. 
+Unloaded module: /lib/x86_64-linux-gnu/libc.so.6. 
+Unloaded module: /lib/x86_64-linux-gnu/libdl.so.2. 
+Unloaded module: /usr/lib/x86_64-linux-gnu/libstdc++.so.6. 
+Unloaded module: /lib/x86_64-linux-gnu/libgcc_s.so.1. 
+Unloaded module: /lib/x86_64-linux-gnu/libm.so.6. 
+Unloaded module: /home/yshi10/intel/inspector_2019.5.0.602103/lib64/runtime/libittnotify.so. 
+Process /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myapp (PID = 9437) has terminated. 
+Application exit code: 139 
+Result file: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result/Result.inspxe 
+Analysis completed
+=== End: [2020/01/15 19:08:40] === 

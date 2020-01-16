@@ -1,0 +1,14 @@
+
+=== Start: [2020/01/15 19:24:39] === 
+  
+0 new problem(s) found 
+=== End: [2020/01/15 19:24:43] === 
+
+=== Start: [2020/01/15 19:25:02] === 
+Created suppression file /home/yshi10/intel/inspector_2019.5.0.602103/bin64/./mySupFile.sup from /home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result. 
+  
+0 new problem(s) found 
+=== End: [2020/01/15 19:25:02] === 
+
+=== Start: [2020/01/15 19:25:29] === 
+=== End: [2020/01/15 19:25:29] === 

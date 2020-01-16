@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log version="1.0" tool="runtool">
+
+<msg id="1" tool="runtool">
+  <type>log-start</type>
+  <arg>2020/01/15 19:08:34</arg>
+</msg>
+<msg id="2" tool="runtool">
+  <type>status</type>
+  <arg> </arg>
+</msg>
+<msg id="3" tool="runtool">
+  <type>problems-total</type>
+  <arg>6</arg>
+</msg>
+<msg id="4" tool="runtool">
+  <type>problems-type</type>
+  <arg>    5 Data race</arg>
+</msg>
+<msg id="5" tool="runtool">
+  <type>problems-type</type>
+  <arg>    1 Unhandled application exception</arg>
+</msg>
+<msg id="6" tool="runtool">
+  <type>log-end</type>
+  <arg>2020/01/15 19:08:40</arg>
+</msg>
+
+</log>
+
+<?xml version="1.0" encoding="utf-8"?>
+<log version="1.0" tool="runtool">
+
+<msg id="1" tool="runtool">
+  <type>log-start</type>
+  <arg>2020/01/15 19:15:25</arg>
+</msg>
+<msg id="2" tool="runtool">
+  <type>created-sup-file</type>
+  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/bin64/./mySupFile.sup</arg>
+  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result</arg>
+</msg>
+<msg id="3" tool="runtool">
+  <type>status</type>
+  <arg> </arg>
+</msg>
+<msg id="4" tool="runtool">
+  <type>problems-total</type>
+  <arg>6</arg>
+</msg>
+<msg id="5" tool="runtool">
+  <type>problems-type</type>
+  <arg>    5 Data race</arg>
+</msg>
+<msg id="6" tool="runtool">
+  <type>problems-type</type>
+  <arg>    1 Unhandled application exception</arg>
+</msg>
+<msg id="7" tool="runtool">
+  <type>log-end</type>
+  <arg>2020/01/15 19:15:25</arg>
+</msg>
+
+</log>
+

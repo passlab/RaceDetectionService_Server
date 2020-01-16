@@ -1,0 +1,112 @@
+suppression = {
+	type = {thread_start}
+	stacks = {
+		{
+			!!!;
+			func=main,mod=myapp,line=1584,func_line=1584;
+		}
+	}
+}
+suppression = {
+	type = {thread_start}
+	stacks = {
+		{
+			!!!;
+			mod=libomp.so.5,line=475808;
+		}
+		{
+			!!!;
+			mod=libomp.so.5,line=467212;
+		}
+	}
+}
+suppression = {
+	type = {datarace}
+	stacks = {
+		{
+			!!!;
+			mod=libomp.so.5,line=213799;
+		}
+		{
+			!!!;
+			mod=libomp.so.5,line=330753;
+		}
+	}
+}
+suppression = {
+	type = {datarace}
+	stacks = {
+		allocation={
+			!!!;
+			mod=libomp.so.5,line=119965;
+		}
+		{
+			!!!;
+			mod=libomp.so.5,line=331041;
+		}
+		{
+			!!!;
+			mod=libomp.so.5,line=203047;
+		}
+	}
+}
+suppression = {
+	type = {datarace}
+	stacks = {
+		allocation={
+			!!!;
+			mod=libomp.so.5,line=119965;
+		}
+		{
+			!!!;
+			mod=libomp.so.5,line=381710;
+		}
+		{
+			!!!;
+			mod=libomp.so.5,line=203053;
+		}
+	}
+}
+suppression = {
+	type = {datarace}
+	stacks = {
+		allocation={
+			!!!;
+			mod=libomp.so.5,line=119965;
+		}
+		{
+			!!!;
+			mod=libomp.so.5,line=471124;
+		}
+		{
+			!!!;
+			mod=libomp.so.5,line=203092;
+		}
+	}
+}
+suppression = {
+	type = {datarace}
+	stacks = {
+		allocation={
+			!!!;
+			mod=libomp.so.5,line=119965;
+		}
+		{
+			!!!;
+			mod=libomp.so.5,line=464499;
+		}
+		{
+			!!!;
+			mod=libomp.so.5,line=473512;
+		}
+	}
+}
+suppression = {
+	type = {prob_app_exception}
+	stacks = {
+		{
+			!!!;
+			mod=libomp.so.5,line=338379;
+		}
+	}
+}

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log version="1.0" tool="runtool">
+
+<msg id="1" tool="runtool">
+  <type>log-start</type>
+  <arg>2020/01/15 19:08:34</arg>
+</msg>
+<msg id="2" tool="runtool">
+  <type>collector-starts</type>
+</msg>
+<msg id="3" tool="runtool">
+  <type>marker-file</type>
+  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result/Result.inspxe</arg>
+</msg>
+<msg id="4" tool="tc">
+  <type>START</type>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:34 2020</timestamp>
+</msg>
+<msg id="5" tool="tc">
+  <type>EXEC_OF_INTEREST</type>
+  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/bin64/myapp</arg>
+  <arg>9437</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:34 2020</timestamp>
+</msg>
+<msg id="6" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/bin64/myapp</arg>
+  <arg>0x400000</arg>
+  <arg>0x60acbf</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:34 2020</timestamp>
+</msg>
+<msg id="7" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib64/ld-linux-x86-64.so.2</arg>
+  <arg>0x7fada0c97000</arg>
+  <arg>0x7fada0ec016f</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:34 2020</timestamp>
+</msg>
+<msg id="8" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>[vdso]</arg>
+  <arg>0x7ffdbadf0000</arg>
+  <arg>0x7ffdbadf095a</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:35 2020</timestamp>
+</msg>
+<msg id="9" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib/x86_64-linux-gnu/libomp.so.5</arg>
+  <arg>0x7fad8ab23000</arg>
+  <arg>0x7fad8add7e57</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:35 2020</timestamp>
+</msg>
+<msg id="10" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/yshi10/ARCHER/ArcherBuild/llvm_bootstrap/lib/libomptarget.so</arg>
+  <arg>0x7fad8a8d3000</arg>
+  <arg>0x7fad8aae2377</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:35 2020</timestamp>
+</msg>
+<msg id="11" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libpthread.so.0</arg>
+  <arg>0x7fad8a677000</arg>
+  <arg>0x7fad8a89547f</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:35 2020</timestamp>
+</msg>
+<msg id="12" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libc.so.6</arg>
+  <arg>0x7fad8a286000</arg>
+  <arg>0x7fad8a676adf</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:35 2020</timestamp>
+</msg>
+<msg id="13" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libdl.so.2</arg>
+  <arg>0x7fad8a082000</arg>
+  <arg>0x7fad8a28510f</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:35 2020</timestamp>
+</msg>
+<msg id="14" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/usr/lib/x86_64-linux-gnu/libstdc++.so.6</arg>
+  <arg>0x7fad89cf2000</arg>
+  <arg>0x7fad8a07a03f</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:35 2020</timestamp>
+</msg>
+<msg id="15" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libgcc_s.so.1</arg>
+  <arg>0x7fad89ada000</arg>
+  <arg>0x7fad89cf142f</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:35 2020</timestamp>
+</msg>
+<msg id="16" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libm.so.6</arg>
+  <arg>0x7fad8973c000</arg>
+  <arg>0x7fad89ad9157</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:35 2020</timestamp>
+</msg>
+<msg id="17" tool="tc">
+  <type>LOAD_MODULE</type>
+  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/lib64/runtime/libittnotify.so</arg>
+  <arg>0x7fad876e6000</arg>
+  <arg>0x7fad878f263f</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:35 2020</timestamp>
+</msg>
+<msg id="18" tool="tc">
+  <type>CTSA_NO_STACK</type>
+  <severity>WARNING</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="19" tool="tc">
+  <type>FATAL_SIGNAL</type>
+  <severity>WARNING</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="20" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/bin64/myapp</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="21" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib64/ld-linux-x86-64.so.2</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="22" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>[vdso]</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="23" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib/x86_64-linux-gnu/libomp.so.5</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="24" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/yshi10/ARCHER/ArcherBuild/llvm_bootstrap/lib/libomptarget.so</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="25" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libpthread.so.0</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="26" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libc.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="27" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libdl.so.2</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="28" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/usr/lib/x86_64-linux-gnu/libstdc++.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="29" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libgcc_s.so.1</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="30" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/lib/x86_64-linux-gnu/libm.so.6</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="31" tool="tc">
+  <type>UNLOAD_MODULE</type>
+  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/lib64/runtime/libittnotify.so</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="32" tool="tc">
+  <type>PROCESS_TERMINATE</type>
+  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/bin64/myapp</arg>
+  <arg>9437</arg>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="33" tool="tc">
+  <type>ANALYSIS_COMPLETE</type>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="34" tool="tc">
+  <type>STOP</type>
+  <severity>INFO</severity>
+  <timestamp>Wed Jan 15 19:08:37 2020</timestamp>
+</msg>
+<msg id="35" tool="runtool">
+  <type>app-exit-code</type>
+  <arg>139</arg>
+</msg>
+<msg id="36" tool="runtool">
+  <type>marker-file</type>
+  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result/Result.inspxe</arg>
+</msg>
+<msg id="37" tool="runtool">
+  <type>collector-done</type>
+</msg>
+<msg id="38" tool="runtool">
+  <type>log-end</type>
+  <arg>2020/01/15 19:08:40</arg>
+</msg>
+
+</log>
+

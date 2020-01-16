@@ -1,0 +1,15 @@
+
+=== Start: [2020/01/15 19:08:34] === 
+  
+6 new problem(s) found 
+    5 Data race problem(s) detected 
+    1 Unhandled application exception problem(s) detected 
+=== End: [2020/01/15 19:08:40] === 
+
+=== Start: [2020/01/15 19:15:25] === 
+Created suppression file /home/yshi10/intel/inspector_2019.5.0.602103/bin64/./mySupFile.sup from /home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result. 
+  
+6 new problem(s) found 
+    5 Data race problem(s) detected 
+    1 Unhandled application exception problem(s) detected 
+=== End: [2020/01/15 19:15:25] === 

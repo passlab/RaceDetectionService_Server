@@ -1,0 +1,9 @@
+suppression = {
+	type = {thread_start}
+	stacks = {
+		{
+			!!!;
+			func=main,mod=myApp,line=1312,func_line=1312;
+		}
+	}
+}

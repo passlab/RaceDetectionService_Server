@@ -1,0 +1,26 @@
+==================
+WARNING: ThreadSanitizer: data race (pid=10177)
+  Atomic read of size 1 at 0x7b6800002300 by main thread:
+    #0 pthread_mutex_lock /home/yshi10/10.0/llvm/projects/compiler-rt/lib/tsan/../sanitizer_common/sanitizer_common_interceptors.inc:4148 (myApp+0x438cb)
+    #1 <null> <null> (libomp.so.5+0x739be)
+    #2 __libc_start_main /build/glibc-OTsEL5/glibc-2.27/csu/../csu/libc-start.c:310 (libc.so.6+0x21b96)
+
+  Previous write of size 1 at 0x7b6800002300 by thread T3:
+    #0 pthread_mutex_init /home/yshi10/10.0/llvm/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:1220 (myApp+0x2aab2)
+    #1 <null> <null> (libomp.so.5+0x71661)
+
+  Location is heap block of size 1440 at 0x7b6800001e00 allocated by main thread:
+    #0 malloc /home/yshi10/10.0/llvm/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:651 (myApp+0x2950a)
+    #1 <null> <null> (libomp.so.5+0x1d4a1)
+    #2 __libc_start_main /build/glibc-OTsEL5/glibc-2.27/csu/../csu/libc-start.c:310 (libc.so.6+0x21b96)
+
+  Thread T3 (tid=10181, running) created by main thread at:
+    #0 pthread_create /home/yshi10/10.0/llvm/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:962 (myApp+0x2a515)
+    #1 <null> <null> (libomp.so.5+0x72110)
+    #2 __libc_start_main /build/glibc-OTsEL5/glibc-2.27/csu/../csu/libc-start.c:310 (libc.so.6+0x21b96)
+
+SUMMARY: ThreadSanitizer: data race (/usr/lib/x86_64-linux-gnu/libomp.so.5+0x739be) 
+==================
+error = 51
+ThreadSanitizer: reported 1 warnings
+
