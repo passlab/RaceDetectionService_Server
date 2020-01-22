@@ -23,7 +23,6 @@ RUN \
     apt-get update && \
     apt-get install -y \ 
         build-essential \
-        clang \
         clang-10 \
         cmake \
         curl \
@@ -31,10 +30,13 @@ RUN \
         git \
         python3-dev \
         vim && \
-    apt-get install -y \
-        python3-flask && \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/*
+
+# Install API framework
+RUN apt-get update && \
+    apt-get install -y \
+    python3-flask
 
 # Setup environment.
 ENV CC /usr/bin/clang-10
@@ -43,6 +45,7 @@ ENV CXX /usr/bin/clang++-10
 # Switch user and working directory.
 USER rds
 WORKDIR /home/rds
+COPY [".bashrc", "/home/rds/"]
 
 # Define default command.
 CMD ["bash"]
