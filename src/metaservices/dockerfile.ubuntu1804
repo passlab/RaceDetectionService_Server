@@ -18,6 +18,7 @@ RUN \
 # Switch user and working directory.
 USER rds
 WORKDIR /home/rds
+COPY [".bashrc", "/home/rds/"]
 
 # Define default command.
 CMD ["bash"]
