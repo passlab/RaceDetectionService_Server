@@ -47,6 +47,7 @@ https://github.com/passlab/RaceDetectionService/blob/master/tools_output/README.
 Flask framework under python3 has been installed in the docker image.
 For now, we could mannually mount or download the source code of Flask server into the container and run it.
 
+
 To deploy the Flask server, we also need to map the host port to the docker container port.
 For example, assume we have an available Flask server running on the port 80 in the container. The port 5001 on the host is assigned to the microservice. While creating the container, the port mapping is needed as follows.
 
@@ -54,6 +55,17 @@ For example, assume we have an available Flask server running on the port 80 in 
 sudo docker run -it -p 5001:80 --name rds_tsan ouankou/rds:threadsanitizer bash
 ```
 
-Then on the host browser, we can access the microservice at `127.0.0.1:5001`. For other external machine, it can be accessed at `<host_ip>:5001`.
+```bash
+# assume Flask source code is located in $HOME/flask
+sudo docker run -it -p 5001:80 --name rds_tsan -v $HOME/flask:/opt/flask ouankou/rds:threadsanitizer bash
+```
+Then inside the containe, start the Flask server.
+```bash
+cd /opt/flask
+export FLASK_APP=Flask_TSan.py
+flask run --host=0.0.0.0
+```
+
+Finally, on the host browser we can access the microservice at `127.0.0.1:5001`. For other external machine, it can be accessed at `<host_ip>:5001`.
 
 
