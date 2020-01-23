@@ -1,0 +1,25 @@
+==================
+WARNING: ThreadSanitizer: data race (pid=23698)
+  Atomic read of size 1 at 0x7b6800002340 by main thread:
+    #0 pthread_mutex_lock /home/yshi10/ARCHER/ArcherBuild/llvm_src/projects/compiler-rt/lib/tsan/../sanitizer_common/sanitizer_common_interceptors.inc:3914:3 (myApp+0x45bdde)
+    #1 __kmp_resume_64 <null> (libomp.so+0x8e398)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myApp+0x4a7a1c)
+
+  Previous write of size 1 at 0x7b6800002340 by thread T3:
+    #0 pthread_mutex_init /home/yshi10/ARCHER/ArcherBuild/llvm_src/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors.cc:1211:3 (myApp+0x441ba3)
+    #1 __kmp_suspend_64 <null> (libomp.so+0x8dd70)
+
+  Location is heap block of size 1504 at 0x7b6800001e00 allocated by main thread:
+    #0 malloc /home/yshi10/ARCHER/ArcherBuild/llvm_src/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors.cc:666:5 (myApp+0x43efc7)
+    #1 ___kmp_allocate <null> (libomp.so+0x201f4)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myApp+0x4a7a1c)
+
+  Thread T3 (tid=23702, running) created by main thread at:
+    #0 pthread_create /home/yshi10/ARCHER/ArcherBuild/llvm_src/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors.cc:992:3 (myApp+0x440a95)
+    #1 __kmp_create_worker <null> (libomp.so+0x8cf91)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myApp+0x4a7a1c)
+
+SUMMARY: ThreadSanitizer: data race (/home/yshi10/ARCHER/ArcherBuild/llvm_bootstrap/lib/libomp.so+0x8e398) in __kmp_resume_64
+==================
+x=99ThreadSanitizer: reported 1 warnings
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <rdmgr>
+  <timestamp type="u64_t">1579744576</timestamp>
+  <hostname type="string">passlab-yaying</hostname>
+  <os type="string">linux</os>
+  <product type="string">Intel® Inspector 2019 Update 5</product>
+  <buildNumber type="s32_t">602103</buildNumber>
+  <logicalCPUCount type="s32_t">12</logicalCPUCount>
+  <physicalCoreCount type="s32_t">6</physicalCoreCount>
+  <processorPackageCount type="s32_t">1</processorPackageCount>
+  <CPUFrequency type="s64_t">3600000000</CPUFrequency>
+  <CPUFamily type="s32_t">6</CPUFamily>
+  <CPUModel type="s32_t">85</CPUModel>
+  <CPUStepping type="s32_t">4</CPUStepping>
+  <CPUBrandName type="string">Intel(R) Xeon(R) W-2133 CPU @ 3.60GHz</CPUBrandName>
+  <isa type="string">avx512</isa>
+  <collectionTimeBegin type="u64_t">1579744576</collectionTimeBegin>
+  <collectionTimeEnd type="u64_t">1579744580</collectionTimeEnd>
+  <variables>
+   <at type="string">ti3</at>
+  </variables>
+ </rdmgr>
+</root>

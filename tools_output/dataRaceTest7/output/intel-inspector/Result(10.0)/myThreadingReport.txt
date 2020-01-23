@@ -1,0 +1,48 @@
+P1: Error: Data race: New
+ P1.6: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X11: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x18f6b: Error X12: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x18efb: Error X13: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+ P1.5: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X8: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x18f6b: Error X9: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x18fb0: Error X10: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+
+P2: Error: Data race: New
+ P2.10: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X22: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X23: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x190a3: Error X24: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+ P2.16: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X40: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X41: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x190aa: Error X42: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+ P2.14: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X34: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X35: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X36: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+ P2.11: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X25: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X26: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x191e0: Error X27: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+ P2.17: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X43: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X44: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x191c0: Error X45: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+
+P3: Error: Data race: New
+ P3.12: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X28: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x191cb: Error X29: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x19146: Error X30: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+ P3.19: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X49: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x19146: Error X50: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x191cb: Error X51: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+
+P4: Error: Data race: New
+ P4.13: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X31: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x19149: Error X32: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x19149: Error X33: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+

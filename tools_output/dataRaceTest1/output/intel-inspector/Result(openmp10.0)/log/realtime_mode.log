@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feedback>
+ <message severity="verbose">Analysis started...</message>
+ <nop/>
+ <message severity="info">Collection started. To stop the collection, either press CTRL-C or enter from another console window: inspxe-cl -r /home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result -command stop.</message>
+ <nop/>
+ <message severity="verbose">Result file: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result/Result.inspxe </message>
+ <nop/>
+ <message severity="verbose">Found target process /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myApp (PID = 26358). Analysis started... </message>
+ <nop/>
+ <message severity="verbose">Loaded module: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myApp. </message>
+ <nop/>
+ <message severity="verbose">Loaded module: /lib64/ld-linux-x86-64.so.2. </message>
+ <nop/>
+ <message severity="verbose">Loaded module: [vdso]. </message>
+ <nop/>
+ <message severity="verbose">Loaded module: /usr/lib/x86_64-linux-gnu/libgomp.so.1. </message>
+ <nop/>
+ <message severity="warning">Inspector does not support the GNU OpenMP Runtime module and may report false positives. Refer to the product release notes. </message>
+ <nop/>
+ <message severity="verbose">Loaded module: /lib/x86_64-linux-gnu/libc.so.6. </message>
+ <nop/>
+ <message severity="verbose">Loaded module: /lib/x86_64-linux-gnu/libdl.so.2. </message>
+ <nop/>
+ <message severity="verbose">Loaded module: /lib/x86_64-linux-gnu/libpthread.so.0. </message>
+ <nop/>
+ <message severity="warning">One or more threads in the application accessed the stack of another thread. This may indicate one or more bugs in your application. Setting the Inspector to detect data races on stack accesses and running another analysis may help you locate these and other bugs.</message>
+ <nop/>
+ <message severity="verbose">Unloaded module: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myApp. </message>
+ <nop/>
+ <message severity="verbose">Unloaded module: /lib64/ld-linux-x86-64.so.2. </message>
+ <nop/>
+ <message severity="verbose">Unloaded module: [vdso]. </message>
+ <nop/>
+ <message severity="verbose">Unloaded module: /usr/lib/x86_64-linux-gnu/libgomp.so.1. </message>
+ <nop/>
+ <message severity="verbose">Unloaded module: /lib/x86_64-linux-gnu/libc.so.6. </message>
+ <nop/>
+ <message severity="verbose">Unloaded module: /lib/x86_64-linux-gnu/libdl.so.2. </message>
+ <nop/>
+ <message severity="verbose">Unloaded module: /lib/x86_64-linux-gnu/libpthread.so.0. </message>
+ <nop/>
+ <message severity="verbose">Process /home/yshi10/intel/inspector_2019.5.0.602103/bin64/myApp (PID = 26358) has terminated. </message>
+ <nop/>
+ <message severity="verbose">Application exit code: 0 </message>
+ <nop/>
+ <message severity="verbose">Result file: /home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result/Result.inspxe </message>
+ <nop/>
+ <message severity="verbose">Analysis completed</message>
+ <nop/>
+ <message severity="info">  </message>
+ <nop/>
+ <message severity="info">1 new problem(s) found </message>
+ <nop/>
+ <message severity="info">    1 Data race problem(s) detected </message>
+ <nop/>
+</feedback>
