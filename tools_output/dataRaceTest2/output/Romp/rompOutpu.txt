@@ -1,0 +1,5 @@
+romp_path: /home/yshi10/datarace/romp/pkgs-src/romp-lib/romp-install/lib/libomptrace.so
+ERROR:  unable to open/reinstrument previously instrumented binary libpthread.so.0!
+ERROR:  unable to open/reinstrument previously instrumented binary libc.so.6!
+Segmentation fault (core dumped)
+

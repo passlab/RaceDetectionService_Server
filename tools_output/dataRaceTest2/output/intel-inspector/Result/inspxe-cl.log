@@ -3,7 +3,7 @@
 
 <msg id="1" tool="runtool">
   <type>log-start</type>
-  <arg>2020/01/15 19:24:39</arg>
+  <arg>2020/01/22 20:47:02</arg>
 </msg>
 <msg id="2" tool="runtool">
   <type>status</type>
@@ -11,38 +11,15 @@
 </msg>
 <msg id="3" tool="runtool">
   <type>problems-total</type>
-  <arg>0</arg>
+  <arg>2</arg>
 </msg>
 <msg id="4" tool="runtool">
-  <type>log-end</type>
-  <arg>2020/01/15 19:24:43</arg>
-</msg>
-
-</log>
-
-<?xml version="1.0" encoding="utf-8"?>
-<log version="1.0" tool="runtool">
-
-<msg id="1" tool="runtool">
-  <type>log-start</type>
-  <arg>2020/01/15 19:25:02</arg>
-</msg>
-<msg id="2" tool="runtool">
-  <type>created-sup-file</type>
-  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/bin64/./mySupFile.sup</arg>
-  <arg>/home/yshi10/intel/inspector_2019.5.0.602103/bin64/Result</arg>
-</msg>
-<msg id="3" tool="runtool">
-  <type>status</type>
-  <arg> </arg>
-</msg>
-<msg id="4" tool="runtool">
-  <type>problems-total</type>
-  <arg>0</arg>
+  <type>problems-type</type>
+  <arg>    2 Data race</arg>
 </msg>
 <msg id="5" tool="runtool">
   <type>log-end</type>
-  <arg>2020/01/15 19:25:02</arg>
+  <arg>2020/01/22 20:47:06</arg>
 </msg>
 
 </log>
@@ -52,11 +29,11 @@
 
 <msg id="1" tool="runtool">
   <type>log-start</type>
-  <arg>2020/01/15 19:25:29</arg>
+  <arg>2020/01/22 20:49:04</arg>
 </msg>
 <msg id="2" tool="runtool">
   <type>log-end</type>
-  <arg>2020/01/15 19:25:29</arg>
+  <arg>2020/01/22 20:49:04</arg>
 </msg>
 
 </log>

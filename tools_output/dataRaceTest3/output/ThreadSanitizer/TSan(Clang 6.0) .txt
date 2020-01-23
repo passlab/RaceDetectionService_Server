@@ -1,0 +1,49 @@
+==================
+WARNING: ThreadSanitizer: data race (pid=23666)
+  Atomic read of size 1 at 0x7b6800002300 by main thread:
+    #0 pthread_mutex_lock /home/yshi10/ARCHER/ArcherBuild/llvm_src/projects/compiler-rt/lib/tsan/../sanitizer_common/sanitizer_common_interceptors.inc:3914:3 (myAPP+0x5d26e)
+    #1 <null> <null> (libomp.so.5+0x739be)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myAPP+0xa8e9c)
+
+  Previous write of size 1 at 0x7b6800002300 by thread T3:
+    #0 pthread_mutex_init /home/yshi10/ARCHER/ArcherBuild/llvm_src/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors.cc:1211:3 (myAPP+0x43033)
+    #1 <null> <null> (libomp.so.5+0x71661)
+
+  Location is heap block of size 1440 at 0x7b6800001e00 allocated by main thread:
+    #0 malloc /home/yshi10/ARCHER/ArcherBuild/llvm_src/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors.cc:666:5 (myAPP+0x40457)
+    #1 <null> <null> (libomp.so.5+0x1d4a1)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myAPP+0xa8e9c)
+
+  Thread T3 (tid=23670, running) created by main thread at:
+    #0 pthread_create /home/yshi10/ARCHER/ArcherBuild/llvm_src/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors.cc:992:3 (myAPP+0x41f25)
+    #1 <null> <null> (libomp.so.5+0x72110)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myAPP+0xa8e9c)
+
+SUMMARY: ThreadSanitizer: data race (/usr/lib/x86_64-linux-gnu/libomp.so.5+0x739be) 
+==================
+LLVMSymbolizer: error reading file: No such file or directory
+==================
+WARNING: ThreadSanitizer: data race (pid=23666)
+  Read of size 4 at 0x7ffeac615688 by main thread:
+    #0 foo /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:62:17 (myAPP+0xa8bb3)
+    #1 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myAPP+0xa8e9c)
+
+  Previous write of size 4 at 0x7ffeac615688 by thread T4:
+    #0 .omp_outlined._debug__ /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:59:51 (myAPP+0xa8dfe)
+    #1 .omp_outlined. /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:60:3 (myAPP+0xa8e68)
+    #2 __kmp_invoke_microtask <null> (libomp.so.5+0x7c452)
+
+  Location is stack of main thread.
+
+  Location is global '??' at 0x7ffeac5f6000 ([stack]+0x00000001f688)
+
+  Thread T4 (tid=23671, running) created by main thread at:
+    #0 pthread_create /home/yshi10/ARCHER/ArcherBuild/llvm_src/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors.cc:992:3 (myAPP+0x41f25)
+    #1 <null> <null> (libomp.so.5+0x72110)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myAPP+0xa8e9c)
+
+SUMMARY: ThreadSanitizer: data race /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:62:17 in foo
+==================
+ThreadSanitizer: reported 2 warnings
+
+

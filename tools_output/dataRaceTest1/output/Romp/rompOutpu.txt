@@ -1,0 +1,181 @@
+0x13f46 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+
+
+0x13f49 num assignments: 1
+0 num input 1
+input is heap, addr: 21a2de
+reads data outside of rodata 
+reads data outside of rodata 
+
+
+0x13f58 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+
+
+0x13f5b num assignments: 1
+0 num input 1
+input is heap, addr: 21a2da
+reads data outside of rodata 
+Func name: __lll_unlock_elision
+
+
+0x13f70 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+reads data outside of rodata 
+reads data outside of rodata 
+
+
+0x13f96 num assignments: 2
+0 num input 1
+1 num input 1
+reads data outside of rodata 
+
+
+0x13fa5 num assignments: 2
+0 num input 1
+1 num input 1
+reads data outside of rodata 
+Func name: __lll_timedlock_elision
+reads data outside of rodata 
+
+
+0x13fb5 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+
+
+0x13fc0 num assignments: 1
+0 num input 1
+input is heap, addr: 21a2e2
+reads data outside of rodata 
+
+
+0x13fee num assignments: 1
+0 num input 2
+reads data outside of rodata 
+reads data outside of rodata 
+
+
+0x14013 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+reads data outside of rodata 
+
+
+0x1402b num assignments: 2
+0 num input 1
+1 num input 1
+reads data outside of rodata 
+
+
+0x14030 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+reads data outside of rodata 
+
+
+0x1404e num assignments: 1
+0 num input 2
+reads data outside of rodata 
+
+
+0x14051 num assignments: 1
+0 num input 1
+input is heap, addr: 21a2de
+reads data outside of rodata 
+reads data outside of rodata 
+
+
+0x14060 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+
+
+0x14063 num assignments: 1
+0 num input 1
+input is heap, addr: 21a2da
+reads data outside of rodata 
+Func name: __lll_trylock_elision
+
+
+0x14073 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+reads data outside of rodata 
+
+
+0x1409a num assignments: 2
+0 num input 1
+1 num input 1
+reads data outside of rodata 
+
+
+0x140a0 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+reads data outside of rodata 
+
+
+0x140b0 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+
+
+0x140c0 num assignments: 1
+0 num input 2
+reads data outside of rodata 
+
+
+0x140c3 num assignments: 1
+0 num input 1
+input is heap, addr: 21a2de
+reads data outside of rodata 
+reads data outside of rodata 
+Func name: __errno_location
+
+
+0x140e0 num assignments: 1
+0 num input 1
+input is heap, addr: 219f99
+reads data outside of rodata 
+
+
+0x140e7 num assignments: 7
+0 num input 3
+input is heap, addr: 0
+1 num input 3
+input is heap, addr: 0
+2 num input 3
+input is heap, addr: 0
+3 num input 3
+input is heap, addr: 0
+4 num input 3
+input is heap, addr: 0
+5 num input 3
+input is heap, addr: 0
+6 num input 3
+input is heap, addr: 0
+reads data outside of rodata 
+
+
+0x140f0 num assignments: 2
+0 num input 1
+1 num input 1
+reads data outside of rodata 
+Insert DWARF line map
+FAILURE: dwarf_begin failed
+total byte size for string table: 2
+string table chunk size: 2
+line information chunk size: 4
+line map chunk size: 4
+objs num: 7
+found main program object: myApp
+string table size: 2 line map size: 4
+Instrumentation time: 30.1775 sec
+
+a[500]=504
+

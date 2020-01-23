@@ -12,8 +12,8 @@
 
 	```	
 	export OMP_NUM_THREADS=5
-	clang DRB001-antidep1-orig-yes.c -o myApp
-	inspxe-cl -collect ti3 -result-dir Result  ./myapp
+	gcc -fopenmp DRB001-antidep1-orig-yes.c -o myApp
+	inspxe-cl -collect ti3 -result-dir Result  ./myApp
 	inspxe-cl -create-suppression-file ./mySupFile -result-dir Result
 	inspxe-cl -report problems -result-dir Result
 

@@ -1,0 +1,28 @@
+P1: Error: Data race: New
+ P1.12: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X28: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x18f6b: Error X29: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x18efb: Error X30: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+ P1.11: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X25: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x18f6b: Error X26: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x18fb0: Error X27: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+
+P2: Error: Data race: New
+ P2.6: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X10: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X11: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x190a3: Error X12: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+ P2.10: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X22: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X23: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X24: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+ P2.7: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X13: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X14: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x191e0: Error X15: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+ P2.9: Error: Data race: New
+  libgomp.so.1!0x9a94: Error X19: Allocation site: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x1916e: Error X20: Write: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  libgomp.so.1!0x191c0: Error X21: Read: Function [Unknown]: Module /usr/lib/x86_64-linux-gnu/libgomp.so.1
+

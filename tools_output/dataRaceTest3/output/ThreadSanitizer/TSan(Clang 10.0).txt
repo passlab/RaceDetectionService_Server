@@ -1,0 +1,48 @@
+==================
+WARNING: ThreadSanitizer: data race (pid=23618)
+  Atomic read of size 1 at 0x7b6800002300 by main thread:
+    #0 pthread_mutex_lock /home/yshi10/10.0/llvm/projects/compiler-rt/lib/tsan/../sanitizer_common/sanitizer_common_interceptors.inc:4148 (myAPP+0x4378b)
+    #1 <null> <null> (libomp.so.5+0x739be)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myAPP+0xd07ec)
+
+  Previous write of size 1 at 0x7b6800002300 by thread T3:
+    #0 pthread_mutex_init /home/yshi10/10.0/llvm/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:1220 (myAPP+0x2a972)
+    #1 <null> <null> (libomp.so.5+0x71661)
+
+  Location is heap block of size 1440 at 0x7b6800001e00 allocated by main thread:
+    #0 malloc /home/yshi10/10.0/llvm/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:651 (myAPP+0x293ca)
+    #1 <null> <null> (libomp.so.5+0x1d4a1)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myAPP+0xd07ec)
+
+  Thread T3 (tid=23622, running) created by main thread at:
+    #0 pthread_create /home/yshi10/10.0/llvm/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:962 (myAPP+0x2a3d5)
+    #1 <null> <null> (libomp.so.5+0x72110)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myAPP+0xd07ec)
+
+SUMMARY: ThreadSanitizer: data race (/usr/lib/x86_64-linux-gnu/libomp.so.5+0x739be) 
+==================
+LLVMSymbolizer: error reading file: No such file or directory
+==================
+WARNING: ThreadSanitizer: data race (pid=23618)
+  Read of size 4 at 0x7ffdbec30638 by main thread:
+    #0 foo /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:62:17 (myAPP+0xd0504)
+    #1 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myAPP+0xd07ec)
+
+  Previous write of size 4 at 0x7ffdbec30638 by thread T4:
+    #0 .omp_outlined._debug__ /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:59:51 (myAPP+0xd0748)
+    #1 .omp_outlined. /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:60:3 (myAPP+0xd07b8)
+    #2 __kmp_invoke_microtask <null> (libomp.so.5+0x7c452)
+
+  Location is stack of main thread.
+
+  Location is global '??' at 0x7ffdbec10000 ([stack]+0x000000020638)
+
+  Thread T4 (tid=23623, running) created by main thread at:
+    #0 pthread_create /home/yshi10/10.0/llvm/projects/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:962 (myAPP+0x2a3d5)
+    #1 <null> <null> (libomp.so.5+0x72110)
+    #2 main /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:67:3 (myAPP+0xd07ec)
+
+SUMMARY: ThreadSanitizer: data race /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest3/DRB059-lastprivate-orig-no.c:62:17 in foo
+==================
+ThreadSanitizer: reported 2 warnings
+
