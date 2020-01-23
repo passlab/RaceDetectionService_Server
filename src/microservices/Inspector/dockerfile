@@ -15,6 +15,7 @@ RUN \
         apt-utils \
         build-essential \
         cmake \
+        cpio \
         curl \
         dialog \
         g++ \

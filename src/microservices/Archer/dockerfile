@@ -84,10 +84,6 @@ ENV LD_LIBRARY_PATH $ARCHER_BUILD/llvm_bootstrap/lib:${LD_LIBRARY_PATH}
 ENV PATH $ARCHER_BUILD/llvm_bootstrap/bin:${PATH}
 ENV LLVM_INSTALL /opt/llvm_install
 
-RUN apt-get update && \
-    apt-get install -y \
-    libomp-dev
-
 # -D CLANG_DEFAULT_OPENMP_RUNTIME:STRING=libomp \
 RUN cd $ARCHER_BUILD && \
     mkdir llvm_build && cd llvm_build && \
