@@ -98,6 +98,7 @@
 	cd $ARCHER_BUILD
 	mkdir -p llvm_bootstrap
 	cd llvm_bootstrap
+	sudo apt install ninja-build
 	CC=$(which gcc) CXX=$(which g++) cmake -G Ninja \
 	 -DCMAKE_BUILD_TYPE=Release \
 	 -DLLVM_TOOL_ARCHER_BUILD=OFF \
