@@ -40,3 +40,20 @@ sudo docker exec -it rds_tsan bash
 Follow the official guide or other instructions.
 
 https://clang.llvm.org/docs/ThreadSanitizer.html
+https://github.com/passlab/RaceDetectionService/blob/master/tools_output/README.md
+
+### Flask development
+
+Flask framework under python3 has been installed in the docker image.
+For now, we could mannually mount or download the source code of Flask server into the container and run it.
+
+To deploy the Flask server, we also need to map the host port to the docker container port.
+For example, assume we have an available Flask server running on the port 80 in the container. The port 5001 on the host is assigned to the microservice. While creating the container, the port mapping is needed as follows.
+
+```bash
+sudo docker run -it -p 5001:80 --name rds_tsan ouankou/rds:threadsanitizer bash
+```
+
+Then on the host browser, we can access the microservice at `127.0.0.1:5001`. For other external machine, it can be accessed at `<host_ip>:5001`.
+
+
