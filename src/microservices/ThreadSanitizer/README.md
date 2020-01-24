@@ -40,6 +40,7 @@ sudo docker exec -it rds_tsan bash
 Follow the official guide or other instructions.
 
 https://clang.llvm.org/docs/ThreadSanitizer.html
+
 https://github.com/passlab/RaceDetectionService/blob/master/tools_output/README.md
 
 ### Flask development
@@ -49,7 +50,7 @@ For now, we could mannually mount or download the source code of Flask server in
 
 
 To deploy the Flask server, we also need to map the host port to the docker container port.
-For example, assume we have an available Flask server running on the port 80 in the container. The port 5001 on the host is assigned to the microservice. While creating the container, the port mapping is needed as follows.
+For example, assume we have an available Flask server running on the port 5000 in the container. The port 5001 on the host is assigned to the microservice. While creating the container, the port mapping is needed as follows.
 
 ```bash
 # assume Flask source code is located in $HOME/flask
