@@ -52,12 +52,8 @@ To deploy the Flask server, we also need to map the host port to the docker cont
 For example, assume we have an available Flask server running on the port 80 in the container. The port 5001 on the host is assigned to the microservice. While creating the container, the port mapping is needed as follows.
 
 ```bash
-sudo docker run -it -p 5001:80 --name rds_tsan ouankou/rds:threadsanitizer bash
-```
-
-```bash
 # assume Flask source code is located in $HOME/flask
-sudo docker run -it -p 5001:80 --name rds_tsan -v $HOME/flask:/opt/flask ouankou/rds:threadsanitizer bash
+sudo docker run -it -p 5001:5000 --name rds_tsan -v $HOME/flask:/opt/flask ouankou/rds:threadsanitizer bash
 ```
 Then inside the containe, start the Flask server.
 ```bash
