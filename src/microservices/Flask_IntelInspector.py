@@ -21,11 +21,6 @@ def index():
         return render_template('index.html', val="")
 
 
-@app.route("/upload", methods=["GET", "POST"])
-def upload():
-    return render_template('upload.html')
-
-
 @app.route("/uploader", methods=['GET', 'POST'])
 def uploader():
     if request.method == "POST":

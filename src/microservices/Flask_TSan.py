@@ -13,7 +13,7 @@ def index():
         cmd_list = ["pwd", "ls -l"]
         for cmd in cmd_list:
             arr = cmd.split()
-            result=run(arr, stdout=PIPE, stderr=PIPE, universal_newlines=True)
+            result = run(arr, stdout=PIPE, stderr=PIPE, universal_newlines=True)
             if(result.returncode == 1):
                 str = result.stderr
             else:
@@ -22,11 +22,6 @@ def index():
         return render_template('index.html', val=str.split('\n'))
     else:
         return render_template('index.html', val="")
-
-
-@app.route("/upload", methods=["GET", "POST"])
-def upload():
-    return render_template('upload.html')
 
 
 @app.route("/uploader", methods=['GET', 'POST'])
