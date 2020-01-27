@@ -20,10 +20,6 @@ def index():
         return render_template('index.html', val="")
 
 
-@app.route("/upload", methods=["GET", "POST"])
-def upload():
-    return render_template('upload.html')
-
 
 @app.route("/uploader", methods=['GET', 'POST'])
 def uploader():
@@ -34,4 +30,4 @@ def uploader():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
