@@ -1,0 +1,16 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+            <li class="active"><a href="/upload">Upload a file</a></li>
+        <form method="POST">
+        <p>Command</p>
+        <p><input type="text" name="content" /></p>
+        <p><input type="submit" value="submit"></p>
+        </form>
+        {% for value in val %}
+        <p>{{value}}</p>
+        {% endfor %}
+    </body>
+</html>
