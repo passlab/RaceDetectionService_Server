@@ -15,7 +15,7 @@
 	gcc -fopenmp DRB001-antidep1-orig-yes.c -o myApp
 	inspxe-cl -collect ti3 -result-dir Result  ./myApp
 	inspxe-cl -create-suppression-file ./mySupFile -result-dir Result
-	inspxe-cl -report problems -result-dir Result
+	inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt
 
    Check the report to see whether you can locate the binary address of a datarace and then use `addr2line` to locate line number in the source code. 
 
