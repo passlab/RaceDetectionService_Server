@@ -136,3 +136,9 @@
  	```	
  	clang-archer DRB104-nowait-barrier-orig-no.c -o myApp -larcher
 	./myApp 
+	
+1. The command line to use python parser:
+ 
+ 	```	
+ 	python3 outputParser.py [your file name(Tsan.txt)] >output.txt
+	 
