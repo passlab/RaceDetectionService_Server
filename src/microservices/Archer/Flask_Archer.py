@@ -26,8 +26,8 @@ def upload():
         else:
             name = ""
         print(name)
-        cmd_list = ["pwd", "ls -l " + name]
-        # cmd_list = ["clang-archer DRB104-nowait-barrier-orig-no.c -o myApp -larcher","./myApp "]
+        # cmd_list = ["pwd", "ls -l " + name]
+        cmd_list = ["clang-archer " + name + " -o myApp -larcher", "./myApp "]
         for cmd in cmd_list:
             arr = cmd.split()
             result = run(arr, stdout=PIPE, stderr=PIPE, universal_newlines=True)

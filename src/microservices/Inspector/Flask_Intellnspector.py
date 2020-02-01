@@ -26,8 +26,8 @@ def upload():
         else:
             name = ""
         print(name)
-        cmd_list = ["pwd", "ls -l " + name]
-        # cmd_list = ["clang-archer DRB104-nowait-barrier-orig-no.c -o myApp -larcher","./myApp "]
+        # cmd_list = ["pwd", "ls -l " + name]
+        cmd_list = ["export OMP_NUM_THREADS=5", "gcc -fopenmp " + name + " -o myApp", "inspxe-cl -collect ti3 -result-dir Result  ./myApp", "inspxe-cl -create-suppression-file ./mySupFile -result-dir Result", "inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt"]
         for cmd in cmd_list:
             arr = cmd.split()
             result = run(arr, stdout=PIPE, stderr=PIPE, universal_newlines=True)
