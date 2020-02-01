@@ -1,25 +1,12 @@
 from flask import Flask, request, render_template, redirect
 from subprocess import PIPE, run
+import requests
 from werkzeug import secure_filename
-import Flask_Archer
-import Flask_IntelInspector
-import Flask_TSan
 app = Flask(__name__)
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    # if request.method == 'POST':
-    #     task_content = request.form['content']
-    #     arr = task_content.split()
-    #     result = run(arr, stdout=PIPE, stderr=PIPE, universal_newlines=True)
-    #     if(result.returncode == 1):
-    #         str = result.stderr
-    #     else:
-    #         str = result.stdout
-    #     print(str)
-    #     return render_template('index.html', val=str.split('\n'))
-    # else:
     return render_template('index.html', val="")
 
 
@@ -27,31 +14,69 @@ def index():
 @app.route("/uploader", methods=['GET', 'POST'])
 def uploader():
     if request.method == "POST":
-        f = request.files['file']
-        if not f:
-            print("file is empty")
+        if 'file' in request.files:
+            f = request.files['file']
+            if not f:
+                print("file is empty")
+                name = ""
+            else:
+                f.save(secure_filename(f.filename))
+                name = f.filename
+            name = f.filename
         else:
-            f.save(secure_filename(f.filename))
-        print(f.filename)
+            name = ""
+        print(name)
         as_dict = request.form.getlist('racedetection')
         print(as_dict)
-        str1 = ""
-        str2 = ""
-        str3 = ""
+        res_archer = ""
+        res_inspector = ""
+        res_tsan = ""
         if not as_dict:
-            str1 = Flask_Archer.archer(f.filename)
-            str2 = Flask_IntelInspector.intellinspector(f.filename)
-            str3 = Flask_TSan.tsan(f.filename)
+            print("nothing")
+            res_archer = callArcher(name)
+            res_inspector = callIntellInspector(name)
+            res_tsan = callTsan(name)
+            res = res_archer.text + res_inspector.text + res_tsan.text
         else:
             for rd in as_dict:
                 if(rd == "archer"):
-                    str1 = Flask_Archer.archer(f.filename)
+                    print("archer")
+                    res_archer = callArcher(name)
+                    res = res_archer.text
+                    print(res_archer.text)
                 if(rd == "intellspector"):
-                    str2 = Flask_IntelInspector.intellinspector(f.filename)
+                    print("intellspector")
+                    res_inspector = callIntellInspector(name)
+                    res = res_inspector.text
+                    print(res_inspector.text)
                 if(rd == "tsan"):
-                    str3 = Flask_TSan.tsan(f.filename)
-        res = str1 + str2 + str3
+                    print("tsan")
+                    res_tsan = callTsan(name)
+                    res = res_tsan.text
+                    print(res_tsan.text)
+        
         return render_template('index.html', val=res.split('\n'))
+
+
+def callArcher(name):
+    url = 'http://0.0.0.0:5001/upload?type=json'
+    files = {'file': open(name, 'rb')}
+    r = requests.post(url, files=files)
+    return r
+
+
+def callIntellInspector(name):
+    url = 'http://0.0.0.0:5002/upload?type=json'
+    files = {'file': open(name, 'rb')}
+    r = requests.post(url, files=files)
+    return r
+
+
+def callTsan(name):
+    url = 'http://0.0.0.0:5002/upload?type=json'
+    files = {'file': open(name, 'rb')}
+    r = requests.post(url, files=files)
+    return r
 
 
 if __name__ == "__main__":
