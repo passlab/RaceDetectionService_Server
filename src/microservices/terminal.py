@@ -18,6 +18,7 @@ def uploader():
             f = request.files['file']
             if not f:
                 print("file is empty")
+                return render_template('index.html', val={"Please insert the file"})
                 name = ""
             else:
                 f.save(secure_filename(f.filename))
@@ -31,6 +32,7 @@ def uploader():
         res_archer = ""
         res_inspector = ""
         res_tsan = ""
+        res = ""
         if not as_dict:
             print("nothing")
             res_archer = callArcher(name)
@@ -42,17 +44,17 @@ def uploader():
                 if(rd == "archer"):
                     print("archer")
                     res_archer = callArcher(name)
-                    res = res_archer.text
+                    res += res_archer.text
                     print(res_archer.text)
                 if(rd == "intellspector"):
                     print("intellspector")
                     res_inspector = callIntellInspector(name)
-                    res = res_inspector.text
+                    res += res_inspector.text
                     print(res_inspector.text)
                 if(rd == "tsan"):
                     print("tsan")
                     res_tsan = callTsan(name)
-                    res = res_tsan.text
+                    res += res_tsan.text
                     print(res_tsan.text)
         
         return render_template('index.html', val=res.split('\n'))
@@ -73,7 +75,7 @@ def callIntellInspector(name):
 
 
 def callTsan(name):
-    url = 'http://0.0.0.0:5002/upload?type=json'
+    url = 'http://0.0.0.0:5003/upload?type=json'
     files = {'file': open(name, 'rb')}
     r = requests.post(url, files=files)
     return r
