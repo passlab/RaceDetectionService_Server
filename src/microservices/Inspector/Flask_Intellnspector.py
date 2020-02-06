@@ -1,8 +1,11 @@
 from flask import Flask, request, render_template, redirect, Response
 from subprocess import PIPE, run
 import flask
+import os
 from werkzeug import secure_filename
+UPLOAD_FOLDER = '/tmp/'
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route('/')
@@ -20,14 +23,15 @@ def upload():
                 print("file is empty")
                 name = ""
             else:
-                f.save(secure_filename(f.filename))
-                name = f.filename
-            name = f.filename
+                # f.save(secure_filename(f.filename))
+                filename = secure_filename(f.filename)
+                f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                name = filename
         else:
             name = ""
         print(name)
-        # cmd_list = ["pwd", "ls -l " + name]
-        cmd_list = ["export OMP_NUM_THREADS=5", "gcc -fopenmp " + name + " -o myApp", "inspxe-cl -collect ti3 -result-dir Result  ./myApp", "inspxe-cl -create-suppression-file ./mySupFile -result-dir Result", "inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt"]
+        # cmd_list = ["pwd", "ls -l " + os.path.join(app.config['UPLOAD_FOLDER'], name)]
+        cmd_list = ["export OMP_NUM_THREADS=5", "gcc -fopenmp " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -o myApp", "inspxe-cl -collect ti3 -result-dir Result  ./myApp", "inspxe-cl -create-suppression-file ./mySupFile -result-dir Result", "inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt"]
         for cmd in cmd_list:
             arr = cmd.split()
             result = run(arr, stdout=PIPE, stderr=PIPE, universal_newlines=True)
