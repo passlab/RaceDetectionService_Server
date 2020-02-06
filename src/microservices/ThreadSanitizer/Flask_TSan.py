@@ -30,8 +30,8 @@ def upload():
         else:
             name = ""
         print(name)
-        cmd_list = ["pwd", "ls -l " + os.path.join(app.config['UPLOAD_FOLDER'], name)]
-        # cmd_list = ["clang " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -fopenmp -fsanitize=thread -fPIE -pie -g -o myApp","./myApp "]
+        # cmd_list = ["pwd", "ls -l " + os.path.join(app.config['UPLOAD_FOLDER'], name)]
+        cmd_list = ["clang " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -fopenmp -fsanitize=thread -fPIE -pie -g -o myApp","./myApp "]
         for cmd in cmd_list:
             arr = cmd.split()
             result = run(arr, stdout=PIPE, stderr=PIPE, universal_newlines=True)
