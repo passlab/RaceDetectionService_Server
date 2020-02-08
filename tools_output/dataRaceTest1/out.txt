@@ -1,0 +1,96 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I0207 20:10:40.426590  7181 RompLib.cpp:125] ompt_start_tool on executable: /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/test.inst
+found dyninst relocation linemap info, num records: 182
+found dyninst relocation string table info, chunk size in bytes: 117
+I0207 20:10:40.429533  7181 Initialize.h:54] start initializing ompt
+I0207 20:10:40.465030  7181 Initialize.h:95] finalizing ompt
+I0207 20:10:40.465055  7181 Initialize.h:97] data race found: 44 races
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8fb8
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8fb9
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8fba
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8fbb
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8d20
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8d21
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8d22
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8d23
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe893c
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe893d
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe893e
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe893f
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8e6c
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8e6d
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8e6e
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8e6f
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe9104
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe9105
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe9106
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe9107
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe86a0
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe86a1
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe86a2
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe86a3
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe87f0
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe87f1
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe87f2
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe87f3
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe9250
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe9251
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe9252
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe9253
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8bd4
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8bd5
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8bd6
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8bd7
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8550
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8551
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8552
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8553
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8a88
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8a89
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8a8a
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+I0207 20:10:40.465055  7181 CoreUtil.cpp:73] RAW: data race found at mem addr:       7ffc0ffe8a8b
+ /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400845]line:64 col:9 vs /home/awang15/Projects/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c@[400832]line:64 col:11 
+a[500]=504

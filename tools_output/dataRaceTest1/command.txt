@@ -1,0 +1,9 @@
+export LD_LIBRARY_PATH=/home/awang15/Projects/romp/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-9.2.0/llvm-openmp-romp-mod-j6b3cjqav6usi32iynskfslcvjsxqxh6/lib:/home/awang15/Projects/romp/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-9.2.0/dyninst-10.1.2-ycukdpodfkf6m5s5smuq3yznphxtu65m/lib:$LD_LIBRARY_PATH
+export DYNINSTAPI_RT_LIB=/home/awang15/Projects/romp/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-9.2.0/dyninst-10.1.2-ycukdpodfkf6m5s5smuq3yznphxtu65m/lib/libdyninstAPI_RT.so
+export ROMP_PATH=/home/awang15/Projects/romp/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-9.2.0/romp-develop-oxazk5cgl76zkf6lp4scocvff3nzvvyu/lib/libomptrace.so
+export PATH=/home/awang15/Projects/romp/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-9.2.0/romp-develop-oxazk5cgl76zkf6lp4scocvff3nzvvyu/bin:$PATH
+ln -s -f /home/awang15/Projects/romp/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/gcc-9.2.0-o2padadtwbm3ovean43z7kdo4324mism/bin/gcc /usr/bin/gcc
+gcc -g -fopenmp -lomp DRB001-antidep1-orig-yes.c -o test
+clang -g -O0 -fopenmp -fpermissive DRB001-antidep1-orig-yes.c -o myApp
+InstrumentMain --program=./myApp
+
