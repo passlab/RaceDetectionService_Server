@@ -9,9 +9,11 @@ RUN \
     useradd rds && \
     apt-get update && \
     apt-get install -y \
-        python3-flask && \
-  rm -rf /var/lib/apt/lists/* && \
-  rm -rf /var/cache/*
+        python3-flask \
+        python3-requests \
+        vim && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/cache/*
 
 # Setup environment.
 
