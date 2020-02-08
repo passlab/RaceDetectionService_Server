@@ -1,9 +1,11 @@
 from flask import Flask, request, render_template, redirect
 from subprocess import PIPE, run
 import requests
+import os
+UPLOAD_FOLDER = '/tmp/'
 from werkzeug import secure_filename
 app = Flask(__name__)
-
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -21,9 +23,10 @@ def uploader():
                 return render_template('index.html', val={"Please insert the file"})
                 name = ""
             else:
-                f.save(secure_filename(f.filename))
-                name = f.filename
-            name = f.filename
+                # f.save(secure_filename(f.filename))
+                filename = secure_filename(f.filename)
+                f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                name = filename
         else:
             name = ""
         print(name)
@@ -62,21 +65,21 @@ def uploader():
 
 def callArcher(name):
     url = 'http://0.0.0.0:5001/upload?type=json'
-    files = {'file': open(name, 'rb')}
+    files = {'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')}
     r = requests.post(url, files=files)
     return r
 
 
 def callIntellInspector(name):
     url = 'http://0.0.0.0:5002/upload?type=json'
-    files = {'file': open(name, 'rb')}
+    files = {'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')}
     r = requests.post(url, files=files)
     return r
 
 
 def callTsan(name):
     url = 'http://0.0.0.0:5003/upload?type=json'
-    files = {'file': open(name, 'rb')}
+    files = {'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')}
     r = requests.post(url, files=files)
     return r
 

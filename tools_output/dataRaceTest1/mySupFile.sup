@@ -1,0 +1,65 @@
+suppression = {
+	type = {thread_start}
+	stacks = {
+		{
+			!!!;
+			func=main,mod=myApp,src=DRB001-antidep1-orig-yes.c,line=53,func_line=1;
+		}
+	}
+}
+suppression = {
+	type = {thread_start}
+	stacks = {
+		{
+			!!!;
+			func=__kmp_launch_worker,mod=libiomp5.so,src=z_Linux_util.cpp,line=521,func_line=0;
+		}
+		{
+			!!!;
+			func=main,mod=myApp,src=DRB001-antidep1-orig-yes.c,line=62,func_line=10;
+		}
+	}
+}
+suppression = {
+	type = {datarace}
+	stacks = {
+		{
+			!!!;
+			func=main,mod=myApp,src=DRB001-antidep1-orig-yes.c,line=64,func_line=12;
+		}
+		{
+			!!!;
+			func=main,mod=myApp,src=DRB001-antidep1-orig-yes.c,line=64,func_line=12;
+		}
+		{
+			!!!;
+			func=main,mod=myApp,src=DRB001-antidep1-orig-yes.c,line=62,func_line=10;
+		}
+	}
+}
+suppression = {
+	type = {datarace}
+	stacks = {
+		{
+			!!!;
+			func=main,mod=myApp,src=DRB001-antidep1-orig-yes.c,line=64,func_line=12;
+		}
+		{
+			!!!;
+			func=main,mod=myApp,src=DRB001-antidep1-orig-yes.c,line=64,func_line=12;
+		}
+	}
+}
+suppression = {
+	type = {datarace}
+	stacks = {
+		{
+			!!!;
+			func=main,mod=myApp,src=DRB001-antidep1-orig-yes.c,line=62,func_line=10;
+		}
+		{
+			!!!;
+			func=main,mod=myApp,src=DRB001-antidep1-orig-yes.c,line=64,func_line=12;
+		}
+	}
+}

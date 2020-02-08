@@ -1,0 +1,13 @@
+P1: Error: Data race: New
+ P1.6: Error: Data race: New
+  /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c(64): Error X11: Write: Function main: Module /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/myApp
+  /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c(64): Error X12: Read: Function main: Module /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/myApp
+ P1.8: Error: Data race: New
+  /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c(62): Error X17: Read: Function main: Module /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/myApp
+  /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c(64): Error X18: Write: Function main: Module /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/myApp
+
+P2: Error: Data race: New
+ P2.7: Error: Data race: New
+  /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c(63): Error X14: Read: Function main: Module /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/myApp
+  /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/DRB001-antidep1-orig-yes.c(63): Error X15: Write: Function main: Module /home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1/myApp
+
