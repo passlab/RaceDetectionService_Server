@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, redirect, Response
 from subprocess import PIPE, run
 import flask
 import os
+import subprocess
 from werkzeug import secure_filename
 UPLOAD_FOLDER = '/tmp/'
 app = Flask(__name__)
@@ -31,14 +32,20 @@ def upload():
             name = ""
         print(name)
         # cmd_list = ["pwd", "ls -l " + os.path.join(app.config['UPLOAD_FOLDER'], name)]
-        cmd_list = ["export OMP_NUM_THREADS=5", "gcc -fopenmp " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -o myApp", "inspxe-cl -collect ti3 -result-dir Result  ./myApp", "inspxe-cl -create-suppression-file ./mySupFile -result-dir Result", "inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt"]
+        cmd_list = ["export OMP_NUM_THREADS=5", "gcc -fopenmp " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -o " + os.path.join(app.config['UPLOAD_FOLDER'], "myApp"), "inspxe-cl -collect ti3 -result-dir Result  " + os.path.join(app.config['UPLOAD_FOLDER'], "myApp"), "inspxe-cl -create-suppression-file ./mySupFile -result-dir Result", "inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt"]
         for cmd in cmd_list:
             arr = cmd.split()
-            result = run(arr, stdout=PIPE, stderr=PIPE, universal_newlines=True)
-            if(result.returncode == 1):
-                str = result.stderr
-            else:
-                str = result.stdout
+        
+            with open(os.path.join(app.config['UPLOAD_FOLDER'], "inspectoroutput.txt"), "w") as file:
+                run(arr, stdout=file, stderr=file, universal_newlines=True)
+
+        res_path = "python3 inspector.py " + os.path.join(app.config['UPLOAD_FOLDER'], "inspectoroutput.txt")
+        result = run(res_path.split(), stdout=PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
+        if(result.returncode == 1):
+            str = result.stderr
+        else:
+            str = result.stdout
+        print(str)
         if request.args.get('type') == 'json':
             return flask.make_response(
                     flask.jsonify({'res': str}), 200)

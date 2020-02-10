@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect, Response
 from subprocess import PIPE, run
 import flask
+import subprocess
 import os
 from werkzeug import secure_filename
 
@@ -32,14 +33,19 @@ def upload():
             name = ""
         print(name)
         # cmd_list = ["pwd", "ls -l " + os.path.join(app.config['UPLOAD_FOLDER'], name)]
-        cmd_list = ["clang-archer " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -o myApp -larcher", "./myApp "]
+        cmd_list = ["clang-archer " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -o "+os.path.join(app.config['UPLOAD_FOLDER'], "myApp")+" -larcher", os.path.join(app.config['UPLOAD_FOLDER'], "myApp")]
         for cmd in cmd_list:
             arr = cmd.split()
-            result = run(arr, stdout=PIPE, stderr=PIPE, universal_newlines=True)
-            if(result.returncode == 1):
-                str = result.stderr
-            else:
-                str = result.stdout
+            with open(os.path.join(app.config['UPLOAD_FOLDER'], "archeroutput.txt"), "w") as file:
+                run(arr, stdout=file, stderr=file, universal_newlines=True)
+        
+        res_path = "python3 ArchoutputParser.py "+os.path.join(app.config['UPLOAD_FOLDER'], "archeroutput.txt")
+        result = run(res_path.split(), stdout=PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
+        if(result.returncode == 1):
+            str = result.stderr
+        else:
+            str = result.stdout
+        print(str)
         if request.args.get('type') == 'json':
             return flask.make_response(
                     flask.jsonify({'res': str}), 200)
