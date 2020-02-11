@@ -82,6 +82,10 @@ for i in range(0,len(content)):
 						item["write line #"] = location[1]
 						item["write symbol position"] = location[2]
 						item["tool"] = "archer"
-for item in jsAry:
-	r = json.dumps(item)
-	print(r)
+
+js = {}
+for i in range(len(jsAry)):
+	js[i] = jsAry[i]
+
+r = json.dumps(js)
+print(r)

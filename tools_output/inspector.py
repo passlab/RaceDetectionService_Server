@@ -54,6 +54,9 @@ for i in range(0,len(content)):
 			js["tool"] = "intel-instpector"
 			jsAry.append(js)
 
-for item in jsAry:
-	r = json.dumps(item)
-	print(r)
+js = {}
+for i in range(len(jsAry)):
+	js[i] = jsAry[i]
+
+r = json.dumps(js)
+print(r)

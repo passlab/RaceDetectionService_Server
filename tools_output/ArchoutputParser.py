@@ -42,7 +42,9 @@ for i in range(0,len(content)):
 						location = file[1].split(":")
 						item["read file name"] = location[0]
 						item["read line #"] = location[1]
-						item["read symbol position"] = location[2]		
+						item["read symbol position"] = location[2]
+						item["tool"] = "archer"
+		
 	x = re.search("^Read",content[i])
 	if (x):
 		y = content[i].split()
@@ -79,6 +81,11 @@ for i in range(0,len(content)):
 						item["write file name"] = location[0]
 						item["write line #"] = location[1]
 						item["write symbol position"] = location[2]
-for item in jsAry:
-	r = json.dumps(item)
-	print(r)
+						item["tool"] = "archer"
+
+js = {}
+for i in range(len(jsAry)):
+	js[i] = jsAry[i]
+
+r = json.dumps(js)
+print(r)

@@ -2,24 +2,26 @@ import json
 import re
 import sys
 
-file = open(sys.argv[1],"r")
-Lines = file.readlines()
-jsAry = []
-content = [line.strip() for line in Lines]
-for item in content:
-	jsAry.append(item)
 
-file = open(sys.argv[2],"r")
-Lines = file.readlines()
-content = [line.strip() for line in Lines]
-for item in content:
-	jsAry.append(item)
+with open("archerOutput.json") as test:
+	data = test.read();
 
-file = open(sys.argv[3],"r")
-Lines = file.readlines()
-content = [line.strip() for line in Lines]
-for item in content:
-	jsAry.append(item)
+d = json.loads(data)
 
-for item in jsAry:
-	print(item)
+with open("inspectorOutput.json") as test:
+	data = test.read();
+
+d2 = json.loads(data)
+
+with open("TsanOutput.json") as test:
+	data = test.read();
+
+d3 = json.loads(data)
+print(d)
+print(d2)
+print(d3)
+print(d['1']["tool"])
+print(d2['1']["tool"])
+print(d3['1']["tool"])
+
+#need a function to analysis the input
