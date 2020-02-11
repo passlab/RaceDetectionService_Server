@@ -7,13 +7,19 @@
 	tar -czvf inspector_2019_update5.tar.gz
 	cd inspector_2019_update5
 	sudo ./install.sh
+	Download parallel_studio_xe_2020_cluster_edition from Intel
+	install parallel_studio
+	export PATH=/opt/intel/bin:$PATH
+	export PATH=/opt/intel/inspector/bin32:$PATH
+	
+	
 	
 1. The command line to use inspector:
 
 	```	
 	export OMP_NUM_THREADS=5
-	gcc -fopenmp DRB001-antidep1-orig-yes.c -o myApp
-	inspxe-cl -collect ti3 -result-dir Result  ./myApp
+	icc -O0 -g -fopenmp DRB001-antidep1-orig-yes.c -o myApp
+	inspxe-cl  -collect ti3 -knob scope=extreme -knob stack-depth=16 -knob use-maximum-resources=true -result-dir myResult ./myApp
 	inspxe-cl -create-suppression-file ./mySupFile -result-dir Result
 	inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt
 
