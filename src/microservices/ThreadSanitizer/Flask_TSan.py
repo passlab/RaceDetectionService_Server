@@ -14,6 +14,20 @@ def api_root():
     return render_template('index.html', val="")
 
 
+# benchmark API for TSan
+@app.route('/benchmark', methods=['POST'])
+def benchmark():
+    print("request received")
+    cmd = "sh test.sh"
+    result = run(cmd.split(), stdout=PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
+    if(result.returncode == 1):
+        str = result.stderr
+    else:
+        str = result.stdout
+    print(str)
+    return flask.make_response(
+                flask.jsonify({'res': str}), 200)
+
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     name = ""

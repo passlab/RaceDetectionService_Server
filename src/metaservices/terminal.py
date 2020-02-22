@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, jsonify
 from subprocess import PIPE, run
 import requests
 import os
@@ -10,6 +10,30 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route("/", methods=["GET", "POST"])
 def index():
     return render_template('index.html', val="")
+
+
+# Benchmark API
+
+@app.route("/benchmark", methods=['GET', 'POST'])
+def benchmark():
+    if request.method == "POST":
+        result = ""
+        content = request.get_json(force=True)
+        for service in content["list"]:
+            if(service == "archer"):
+                print("archer")
+                result_archer = archerBenchmark()
+                result += result_archer.text
+            if(service == "intellspector"):
+                print("intellspector")
+                result_intel = intellspectorBenchmark()
+                result += result_intel.text
+            if(service == "tsan"):
+                print("tsan")
+                result_tsan = tsanBenchmark()
+                result += result_tsan.text
+        print(result)
+        return jsonify(result)
 
 
 
@@ -81,6 +105,24 @@ def callTsan(name):
     url = 'http://0.0.0.0:5003/upload?type=json'
     files = {'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')}
     r = requests.post(url, files=files)
+    return r
+
+
+def archerBenchmark():
+    url = 'http://0.0.0.0:5001/benchmark?type=json'
+    r = requests.post(url)
+    return r
+
+
+def intellspectorBenchmark():
+    url = 'http://0.0.0.0:5002/benchmark?type=json'
+    r = requests.post(url)
+    return r
+
+
+def tsanBenchmark():
+    url = 'http://0.0.0.0:5003/benchmark?type=json'
+    r = requests.post(url)
     return r
 
 
