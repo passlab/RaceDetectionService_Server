@@ -7,12 +7,15 @@
 # Pull base image.
 FROM ubuntu:18.04
 
+# Add user
+RUN groupadd -g 9999 rds && \
+    useradd -r -u 9999 -g rds -m -d /home/rds rds
+
 # Install packages.
-RUN \
-    useradd rds && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install -y \
         apt-utils \
+        bc \
         build-essential \
         cmake \
         cpio \
@@ -24,10 +27,11 @@ RUN \
         git \
         python3-dev \
         software-properties-common \
+        time \
         vim \
         wget && \
-  rm -rf /var/lib/apt/lists/* && \
-  rm -rf /var/cache/*
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /var/cache/*
 
 # Install API framework
 RUN apt-get update && \
