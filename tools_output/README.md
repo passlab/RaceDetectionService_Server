@@ -9,7 +9,7 @@
 	sudo ./install.sh
 	Download parallel_studio_xe_2020_cluster_edition from Intel
 	install parallel_studio
-	export PATH=/opt/intel/parallel_studio_xe_2020.0.088/bin/psxevars.sh:$PATH
+	source /opt/intel/parallel_studio_xe_2020.0.088/bin/psxevars.sh
 	export PATH=/opt/intel/bin:$PATH
 	export PATH=/opt/intel/inspector/bin32:$PATH
 	
