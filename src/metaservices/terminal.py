@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, redirect, jsonify
 from subprocess import PIPE, run
 import requests
 import os
+import time
 UPLOAD_FOLDER = '/tmp/'
 from werkzeug import secure_filename
 app = Flask(__name__)
@@ -19,6 +20,7 @@ def benchmark():
     if request.method == "POST":
         result = ""
         content = request.get_json(force=True)
+        tstart = time.time()
         for service in content["list"]:
             if(service == "archer"):
                 print("archer")
@@ -32,6 +34,8 @@ def benchmark():
                 print("tsan")
                 result_tsan = tsanBenchmark()
                 result += result_tsan.text
+        tend = time.time()
+        print(tend - tstart)
         print(result)
         return jsonify(result)
 
