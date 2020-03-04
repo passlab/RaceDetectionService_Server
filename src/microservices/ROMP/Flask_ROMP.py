@@ -75,7 +75,9 @@ def upload():
         else:
             name = ""
         print(name)
-        # cmd_list = ["pwd", "ls -l " + os.path.join(app.config['UPLOAD_FOLDER'], name)]
+        # cmd_list = [
+        #     "pwd", "ls -l " + os.path.join(app.config['UPLOAD_FOLDER'], name)
+        # ]
         cmd_list = [
             "clang-archer " + os.path.join(app.config['UPLOAD_FOLDER'], name) +
             " -o " + os.path.join(app.config['UPLOAD_FOLDER'], "myApp") +
@@ -89,7 +91,7 @@ def upload():
                                  "archeroutput.txt"), "w") as file:
                 run(arr, stdout=file, stderr=file, universal_newlines=True)
 
-        res_path = "python3 ArchoutputParser.py " + os.path.join(
+        res_path = "python3 RompOutputParser.py " + os.path.join(
             app.config['UPLOAD_FOLDER'], "archeroutput.txt")
         result = run(res_path.split(),
                      stdout=PIPE,
