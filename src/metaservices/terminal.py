@@ -133,7 +133,7 @@ def uploader():
 
 
 def callArcher(name):
-    url = 'http://0.0.0.0:5001/upload?type=json'
+    url = 'http://10.18.206.135:5001/upload?type=json'
     files = {
         'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
     }
@@ -142,7 +142,7 @@ def callArcher(name):
 
 
 def callIntellInspector(name):
-    url = 'http://0.0.0.0:5002/upload?type=json'
+    url = 'http://10.18.206.135:5002/upload?type=json'
     files = {
         'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
     }
@@ -151,7 +151,7 @@ def callIntellInspector(name):
 
 
 def callTsan(name):
-    url = 'http://0.0.0.0:5003/upload?type=json'
+    url = 'http://10.18.206.135:5003/upload?type=json'
     files = {
         'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
     }
@@ -160,7 +160,7 @@ def callTsan(name):
 
 
 def callRomp(name):
-    url = 'http://0.0.0.0:5004/upload?type=json'
+    url = 'http://10.18.206.135:5004/upload?type=json'
     files = {
         'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
     }
@@ -169,25 +169,25 @@ def callRomp(name):
 
 
 def archerBenchmark():
-    url = 'http://0.0.0.0:5001/benchmark?type=json'
+    url = 'http://10.18.206.135:5001/benchmark?type=json'
     r = requests.post(url)
     return r
 
 
 def intellspectorBenchmark():
-    url = 'http://0.0.0.0:5002/benchmark?type=json'
+    url = 'http://10.18.206.135:5002/benchmark?type=json'
     r = requests.post(url)
     return r
 
 
 def tsanBenchmark():
-    url = 'http://0.0.0.0:5003/benchmark?type=json'
+    url = 'http://10.18.206.135:5003/benchmark?type=json'
     r = requests.post(url)
     return r
 
 
 def rompBenchmark():
-    url = 'http://0.0.0.0:5004/benchmark?type=json'
+    url = 'http://10.18.206.135:5004/benchmark?type=json'
     r = requests.post(url)
     return r
 
