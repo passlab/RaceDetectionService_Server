@@ -3,6 +3,7 @@ from subprocess import PIPE, run
 import flask
 import subprocess
 import os
+import json
 from werkzeug import secure_filename
 import time
 
@@ -55,7 +56,7 @@ def benchmark():
               "w") as archerfile:
         print("Benchmark time: ", benchmarkTime, file=archerfile)
         print("Parser time: ", parserTime, file=archerfile)
-    return flask.make_response(flask.jsonify({'res': str}), 200)
+    return flask.make_response(flask.jsonify({'res': json.loads(str)}), 200)
 
 
 @app.route('/upload', methods=['GET', 'POST'])
@@ -102,11 +103,15 @@ def upload():
         else:
             str = result.stdout
         print(str)
+        # str = '{"0": {"Memory Address": "0x7fff13f3bb10", "Write_thread": "thread T3", "file loaction": "/home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1", "write file name": "DRB001-antidep1-orig-yes.c", "write line #": "64", "write symbol position": "9", "Read_thread": "thread T2", "read file name": "DRB001-antidep1-orig-yes.c", "read line #": "64", "read symbol position": "10", "tool": "archer"}, "1": {"Memory Address": "0x7fff13f3b4d0", "Write_thread": "thread T1", "file loaction": "/home/yshi10/datarace/RaceDetectionService/tools_output/dataRaceTest1", "write file name": "DRB001-antidep1-orig-yes.c", "write line #": "64", "write symbol position": "9", "Read_thread": "main thread", "read file name": "DRB001-antidep1-orig-yes.c", "read line #": "64", "read symbol position": "10", "tool": "archer"}}'
+        if not str:
+            str = '{}'
         if request.args.get('type') == 'json':
-            return flask.make_response(flask.jsonify({'res': str}), 200)
+            return flask.make_response(
+                flask.jsonify({'romp': json.loads(str)}), 200)
         else:
             return render_template('index.html', val=str.split('\n'))
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5004, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

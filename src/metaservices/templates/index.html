@@ -16,8 +16,27 @@
         <p><input type="text" name="content" /></p>
         <p><input type="submit" value="submit"></p>
         </form> -->
-    {% for value in val %}
-    <p>{{value}}</p>
-    {% endfor %}
+    {% if ('archer' in val or 'intellspector' in val or 'tsan' in val or 'romp'
+    in val) %} {% for value in val.keys() %} {% if "0" in val[value] %}
+    <h2>{{value}}</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          {% for key2 in val[value]["0"].keys() %}
+          <th>{{ key2 }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      {% for value1 in val[value].values() %}
+      <tbody>
+        <tr>
+          {% for value2 in value1.values() %}
+          <td>{{value2}}</td>
+          {% endfor %}
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+    {% endif %} {% endfor %} {% endif %}
   </body>
 </html>

@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, jsonify
 from subprocess import PIPE, run
 import requests
 import os
+import json
 import time
 from werkzeug import secure_filename
 UPLOAD_FOLDER = '/tmp/'
@@ -69,38 +70,40 @@ def uploader():
         res_archer = ""
         res_inspector = ""
         res_tsan = ""
-        res = ""
+        res = {}
         if not as_dict:
             print("nothing")
             res_archer = callArcher(name)
             res_inspector = callIntellInspector(name)
             res_tsan = callTsan(name)
             res_romp = callRomp(name)
-            res = res_archer.text + res_inspector.text + res_tsan.text + res_romp.text
+            res["archer"] = json.loads(res_archer.text)["archer"]
+            res["intellspector"] = json.loads(
+                res_inspector.text)["intellspector"]
+            res["tsan"] = json.loads(res_tsan.text)["tsan"]
+            res["romp"] = json.loads(res_romp.text)["romp"]
         else:
             for rd in as_dict:
                 if (rd == "archer"):
                     print("archer")
                     res_archer = callArcher(name)
-                    res += res_archer.text
-                    print(res_archer.text)
+                    print(type(res_archer.text))
+                    res["archer"] = json.loads(res_archer.text)["archer"]
                 if (rd == "intellspector"):
                     print("intellspector")
                     res_inspector = callIntellInspector(name)
-                    res += res_inspector.text
-                    print(res_inspector.text)
+                    res["intellspector"] = json.loads(
+                        res_inspector.text)["intellspector"]
                 if (rd == "tsan"):
                     print("tsan")
                     res_tsan = callTsan(name)
-                    res += res_tsan.text
-                    print(res_tsan.text)
+                    res["tsan"] = json.loads(res_tsan.text)["tsan"]
                 if (rd == "romp"):
                     print("romp")
                     res_romp = callRomp(name)
-                    res += res_romp.text
-                    print(res_romp.text)
-
-        return render_template('index.html', val=res.split('\n'))
+                    res["romp"] = json.loads(res_romp.text)["romp"]
+        print(res)
+        return render_template('index.html', val=res)
 
 
 def callArcher(name):
