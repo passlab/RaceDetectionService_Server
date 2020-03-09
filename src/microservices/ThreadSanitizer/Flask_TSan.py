@@ -22,7 +22,7 @@ def benchmark():
     print("request received")
 
     # Running first command
-    cmd = "sh test.sh"
+    cmd = "sh /home/rds/dataracebench/check-data-races.sh"
     tstart = time.time()
     result = run(cmd.split(),
                  stdout=PIPE,
@@ -37,21 +37,6 @@ def benchmark():
         str = result.stdout
     print(str)
 
-    # Running second command
-    cmd = "sh test.sh"
-    tstart = time.time()
-    result = run(cmd.split(),
-                 stdout=PIPE,
-                 stderr=subprocess.STDOUT,
-                 universal_newlines=True)
-    tend = time.time()
-    parserTime = tend - tstart
-    print(parserTime)
-    if (result.returncode == 1):
-        str = result.stderr
-    else:
-        str = result.stdout
-    print(str)
     with open(os.path.join(app.config['UPLOAD_FOLDER'], "tsanbenchmark.txt"),
               "w") as tsanfile:
         print("Benchmark time: ", benchmarkTime, file=tsanfile)

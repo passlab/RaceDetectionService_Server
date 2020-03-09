@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, jsonify
 from subprocess import PIPE, run
 import requests
+import subprocess
 import os
 import json
 import time
@@ -24,36 +25,52 @@ def benchmark():
         return render_template('benchmark.html', val="")
 
     if request.method == "POST":
-        result = {}
+        # result = {}
         # content = request.get_json(force=True)
-        content = {}
-        content["list"] = request.form.getlist('list')
+
+        cmd = cmd = "sh /home/rds/dataracebench/check-data-races.sh --newbench"
         tstart = time.time()
-        for service in content["list"]:
-            if (service == "archer"):
-                print("archer")
-                result_archer = archerBenchmark()
-                result["archer"] = json.loads(result_archer.text)["archer"]
-            if (service == "intellspector"):
-                print("intellspector")
-                result_intel = intellspectorBenchmark()
-                result["intellspector"] = json.loads(
-                    result_intel.text)["intellspector"]
-            if (service == "tsan"):
-                print("tsan")
-                result_tsan = tsanBenchmark()
-                result["tsan"] = json.loads(result_tsan.text)["tsan"]
-            if (service == "romp"):
-                print("romp")
-                result_romp = rompBenchmark()
-                result["romp"] = json.loads(result_romp.text)["romp"]
+        result = run(cmd.split(),
+                     stdout=PIPE,
+                     stderr=subprocess.STDOUT,
+                     universal_newlines=True)
+        tend = time.time()
+        benchmarkTime = tend - tstart
+        if (result.returncode == 1):
+            str = result.stderr
+        else:
+            str = result.stdout
+        print(benchmarkTime)
+        print(str)
+        return jsonify(result)
+        # content = {}
+        # content["list"] = request.form.getlist('list')
+        # tstart = time.time()
+        # for service in content["list"]:
+        #     if (service == "archer"):
+        #         print("archer")
+        #         result_archer = archerBenchmark()
+        #         result["archer"] = json.loads(result_archer.text)["archer"]
+        #     if (service == "intellspector"):
+        #         print("intellspector")
+        #         result_intel = intellspectorBenchmark()
+        #         result["intellspector"] = json.loads(
+        #             result_intel.text)["intellspector"]
+        #     if (service == "tsan"):
+        #         print("tsan")
+        #         result_tsan = tsanBenchmark()
+        #         result["tsan"] = json.loads(result_tsan.text)["tsan"]
+        #     if (service == "romp"):
+        #         print("romp")
+        #         result_romp = rompBenchmark()
+        #         result["romp"] = json.loads(result_romp.text)["romp"]
         tend = time.time()
         print(tend - tstart)
         print(result)
-        if request.args.get('type') == 'json':
-            return jsonify(result)
-        else:
-            return render_template('benchmark.html', val=result)
+        # if request.args.get('type') == 'json':
+        #     return jsonify(result)
+        # else:
+        #     return render_template('benchmark.html', val=result)
 
 
 @app.route("/uploader", methods=['GET', 'POST'])
