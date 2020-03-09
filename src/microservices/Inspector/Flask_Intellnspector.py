@@ -55,7 +55,7 @@ def benchmark():
               "w") as intellfile:
         print("Benchmark time: ", benchmarkTime, file=intellfile)
         print("Parser time: ", parserTime, file=intellfile)
-    return flask.make_response(flask.jsonify({'res': str}), 200)
+    return flask.make_response(flask.jsonify({'intellspector': json.loads(str)}), 200)
 
 
 @app.route('/upload', methods=['GET', 'POST'])

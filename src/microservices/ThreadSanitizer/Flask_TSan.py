@@ -56,7 +56,7 @@ def benchmark():
               "w") as tsanfile:
         print("Benchmark time: ", benchmarkTime, file=tsanfile)
         print("Parser time: ", parserTime, file=tsanfile)
-    return flask.make_response(flask.jsonify({'res': str}), 200)
+    return flask.make_response(flask.jsonify({'tsan': json.loads(str)}), 200)
 
 
 @app.route('/upload', methods=['GET', 'POST'])

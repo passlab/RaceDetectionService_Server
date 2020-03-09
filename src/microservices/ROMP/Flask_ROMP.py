@@ -56,7 +56,7 @@ def benchmark():
               "w") as archerfile:
         print("Benchmark time: ", benchmarkTime, file=archerfile)
         print("Parser time: ", parserTime, file=archerfile)
-    return flask.make_response(flask.jsonify({'res': json.loads(str)}), 200)
+    return flask.make_response(flask.jsonify({'romp': json.loads(str)}), 200)
 
 
 @app.route('/upload', methods=['GET', 'POST'])

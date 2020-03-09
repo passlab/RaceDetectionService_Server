@@ -20,31 +20,40 @@ def index():
 
 @app.route("/benchmark", methods=['GET', 'POST'])
 def benchmark():
+    if request.method == "GET":
+        return render_template('benchmark.html', val="")
+
     if request.method == "POST":
-        result = ""
-        content = request.get_json(force=True)
+        result = {}
+        # content = request.get_json(force=True)
+        content = {}
+        content["list"] = request.form.getlist('list')
         tstart = time.time()
         for service in content["list"]:
             if (service == "archer"):
                 print("archer")
                 result_archer = archerBenchmark()
-                result += result_archer.text
+                result["archer"] = json.loads(result_archer.text)["archer"]
             if (service == "intellspector"):
                 print("intellspector")
                 result_intel = intellspectorBenchmark()
-                result += result_intel.text
+                result["intellspector"] = json.loads(
+                    result_intel.text)["intellspector"]
             if (service == "tsan"):
                 print("tsan")
                 result_tsan = tsanBenchmark()
-                result += result_tsan.text
+                result["tsan"] = json.loads(result_tsan.text)["tsan"]
             if (service == "romp"):
                 print("romp")
                 result_romp = rompBenchmark()
-                result += result_romp.text
+                result["romp"] = json.loads(result_romp.text)["romp"]
         tend = time.time()
         print(tend - tstart)
         print(result)
-        return jsonify(result)
+        if request.args.get('type') == 'json':
+            return jsonify(result)
+        else:
+            return render_template('benchmark.html', val=result)
 
 
 @app.route("/uploader", methods=['GET', 'POST'])
