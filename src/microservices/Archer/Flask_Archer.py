@@ -39,7 +39,6 @@ def benchmark():
     with open(os.path.join(app.config['UPLOAD_FOLDER'], "archerbenchmark.txt"),
               "w") as archerfile:
         print("Benchmark time: ", benchmarkTime, file=archerfile)
-        print("Parser time: ", parserTime, file=archerfile)
     return flask.make_response(flask.jsonify({'archer': json.loads(str)}), 200)
 
 

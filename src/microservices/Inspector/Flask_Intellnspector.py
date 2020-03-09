@@ -39,7 +39,6 @@ def benchmark():
     with open(os.path.join(app.config['UPLOAD_FOLDER'], "intellbenchmark.txt"),
               "w") as intellfile:
         print("Benchmark time: ", benchmarkTime, file=intellfile)
-        print("Parser time: ", parserTime, file=intellfile)
     return flask.make_response(flask.jsonify({'intellspector': json.loads(str)}), 200)
 
 

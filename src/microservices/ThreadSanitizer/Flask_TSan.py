@@ -40,7 +40,6 @@ def benchmark():
     with open(os.path.join(app.config['UPLOAD_FOLDER'], "tsanbenchmark.txt"),
               "w") as tsanfile:
         print("Benchmark time: ", benchmarkTime, file=tsanfile)
-        print("Parser time: ", parserTime, file=tsanfile)
     return flask.make_response(flask.jsonify({'tsan': json.loads(str)}), 200)
 
 
