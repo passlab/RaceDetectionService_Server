@@ -38,8 +38,8 @@ def benchmark():
     print(str)
 
     with open(os.path.join(app.config['UPLOAD_FOLDER'], "rompbenchmark.txt"),
-              "w") as archerfile:
-        print("Benchmark time: ", benchmarkTime, file=archerfile)
+              "w") as rompfile:
+        print("Benchmark time: ", benchmarkTime, file=rompfile)
     return flask.make_response(flask.jsonify({'romp': json.loads(str)}), 200)
 
 
