@@ -63,8 +63,11 @@ def upload():
         # cmd_list = [
         #     "pwd", "ls -l " + os.path.join(app.config['UPLOAD_FOLDER'], name)
         # ]
-        cmd_list = ["export OMP_NUM_THREADS=5", "gcc -fopenmp " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -o " + os.path.join(app.config['UPLOAD_FOLDER'], "myApp"), "inspxe-cl -collect ti3 -result-dir Result  " + os.path.join(app.config['UPLOAD_FOLDER'], "myApp"), "inspxe-cl -create-suppression-file ./mySupFile -result-dir Result", "inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt"]
+        cmd_list = ["icc -O0 -g -fopenmp " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -o " + os.path.join(app.config['UPLOAD_FOLDER'], "myApp"),
+         "inspxe-cl  -collect ti3 -knob scope=extreme -knob stack-depth=16 -knob use-maximum-resources=true -result-dir "+os.path.join(app.config['UPLOAD_FOLDER'], "myResult") +" "+ os.path.join(app.config['UPLOAD_FOLDER'], "myApp"),
+          "inspxe-cl -report problems -result-dir Result -report-output " + os.path.join(app.config['UPLOAD_FOLDER'], "myResult/myThreadingReport.txt")]
         for cmd in cmd_list:
+            print(cmd)
             arr = cmd.split()
 
             with open(
