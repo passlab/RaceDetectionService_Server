@@ -147,4 +147,10 @@
  
  	```	
  	python3 outputParser.py [your file name(Tsan.txt)] >output.txt
-	 
+
+1. The command line to use romp:
+
+	```
+	gcc -g -fopenmp -lomp DRB001-antidep1-orig-yes.c -o test
+	InstrumentMain --program=./myApp
+	./myApp.inst
