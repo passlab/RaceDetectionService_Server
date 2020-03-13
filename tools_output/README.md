@@ -21,7 +21,6 @@
 	export OMP_NUM_THREADS=5
 	icc -O0 -g -fopenmp DRB001-antidep1-orig-yes.c -o myApp
 	inspxe-cl  -collect ti3 -knob scope=extreme -knob stack-depth=16 -knob use-maximum-resources=true -result-dir myResult ./myApp
-	inspxe-cl -create-suppression-file ./mySupFile -result-dir Result
 	inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt
 
    Check the report to see whether you can locate the binary address of a datarace and then use `addr2line` to locate line number in the source code. 
