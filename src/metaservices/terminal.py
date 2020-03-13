@@ -103,69 +103,79 @@ def uploader():
             res_inspector = callIntellInspector(name)
             res_tsan = callTsan(name)
             res_romp = callRomp(name)
-            res["archer"] = json.loads(res_archer.text)["archer"]
-            res["intellspector"] = json.loads(
-                res_inspector.text)["intellspector"]
-            res["tsan"] = json.loads(res_tsan.text)["tsan"]
-            res["romp"] = json.loads(res_romp.text)["romp"]
+            res["archer"] = res_archer
+            res["intellspector"] = res_inspector
+            res["tsan"] = res_tsan
+            res["romp"] = res_romp
         else:
             for rd in as_dict:
                 if (rd == "archer"):
                     print("archer")
                     res_archer = callArcher(name)
-                    print(type(res_archer.text))
-                    res["archer"] = json.loads(res_archer.text)["archer"]
+                    print(type(res_archer))
+                    res["archer"] = res_archer
                 if (rd == "intellspector"):
                     print("intellspector")
                     res_inspector = callIntellInspector(name)
-                    res["intellspector"] = json.loads(
-                        res_inspector.text)["intellspector"]
+                    res["intellspector"] = res_inspector
                 if (rd == "tsan"):
                     print("tsan")
                     res_tsan = callTsan(name)
-                    res["tsan"] = json.loads(res_tsan.text)["tsan"]
+                    res["tsan"] = res_tsan
                 if (rd == "romp"):
                     print("romp")
                     res_romp = callRomp(name)
-                    res["romp"] = json.loads(res_romp.text)["romp"]
+                    res["romp"] = res_romp
         print(res)
         return render_template('index.html', val=res)
 
 
 def callArcher(name):
-    url = 'http://10.18.206.135:5001/upload?type=json'
-    files = {
-        'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
-    }
-    r = requests.post(url, files=files)
-    return r
+    archerres = {}
+    for i in range(5):
+        url = 'http://10.18.206.135:5001/upload?type=json'
+        files = {
+            'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
+        }
+        r = requests.post(url, files=files)
+        archerres[i] = json.loads(r.text)["archer"]
+    return archerres
 
 
 def callIntellInspector(name):
-    url = 'http://10.18.206.135:5002/upload?type=json'
-    files = {
-        'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
-    }
-    r = requests.post(url, files=files)
-    return r
+    intelres = {}
+    for i in range(5):
+        url = 'http://10.18.206.135:5002/upload?type=json'
+        files = {
+            'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
+        }
+        r = requests.post(url, files=files)
+        intelres[i] = json.loads(r.text)["intellspector"]
+    return intelres
 
 
 def callTsan(name):
-    url = 'http://10.18.206.135:5003/upload?type=json'
-    files = {
-        'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
-    }
-    r = requests.post(url, files=files)
-    return r
+    tsanres = {}
+    for i in range(5):
+        url = 'http://10.18.206.135:5003/upload?type=json'
+        files = {
+            'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
+        }
+        r = requests.post(url, files=files)
+        tsanres[i] = json.loads(r.text)["tsan"]
+    return tsanres
 
 
 def callRomp(name):
-    url = 'http://10.18.206.135:5004/upload?type=json'
-    files = {
-        'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
-    }
-    r = requests.post(url, files=files)
-    return r
+    rompres = {}
+    for i in range(5):
+        url = 'http://10.18.206.135:5004/upload?type=json'
+        files = {
+            'file': open(os.path.join(app.config['UPLOAD_FOLDER'], name), 'rb')
+        }
+        r = requests.post(url, files=files)
+        rompres[i] = json.loads(r.text)["romp"]
+    return rompres
 
 
 def archerBenchmark():
