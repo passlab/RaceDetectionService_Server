@@ -60,10 +60,10 @@ def upload():
         else:
             name = ""
         print(name)
-        cmd_list = [
-            "pwd", "ls -l " + os.path.join(app.config['UPLOAD_FOLDER'], name)
-        ]
-        # cmd_list = ["export OMP_NUM_THREADS=5", "gcc -fopenmp " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -o " + os.path.join(app.config['UPLOAD_FOLDER'], "myApp"), "inspxe-cl -collect ti3 -result-dir Result  " + os.path.join(app.config['UPLOAD_FOLDER'], "myApp"), "inspxe-cl -create-suppression-file ./mySupFile -result-dir Result", "inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt"]
+        # cmd_list = [
+        #     "pwd", "ls -l " + os.path.join(app.config['UPLOAD_FOLDER'], name)
+        # ]
+        cmd_list = ["export OMP_NUM_THREADS=5", "gcc -fopenmp " + os.path.join(app.config['UPLOAD_FOLDER'], name) + " -o " + os.path.join(app.config['UPLOAD_FOLDER'], "myApp"), "inspxe-cl -collect ti3 -result-dir Result  " + os.path.join(app.config['UPLOAD_FOLDER'], "myApp"), "inspxe-cl -create-suppression-file ./mySupFile -result-dir Result", "inspxe-cl -report problems -result-dir Result -report-output Result/myThreadingReport.txt"]
         for cmd in cmd_list:
             arr = cmd.split()
 
