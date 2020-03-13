@@ -151,6 +151,6 @@
 1. The command line to use romp:
 
 	```
-	gcc -g -fopenmp -lomp DRB001-antidep1-orig-yes.c -o test
+	gcc -g -fopenmp -lomp DRB001-antidep1-orig-yes.c -o myApp
 	InstrumentMain --program=./myApp
 	./myApp.inst
