@@ -93,7 +93,37 @@
       </div>
 
       <div class="tab-pane" id="tab3">
-        <p>tab3 content</p>
+        {% if ('archer' in val or 'intellspector' in val or 'tsan' in val or
+        'romp' in val) %}
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Memory Address</th>
+              <th>Read_thread</th>
+              <th>Write_thread</th>
+              <th>file loaction</th>
+              <th>read file name</th>
+              <th>read line #</th>
+              <th>read symbol position</th>
+              <th>tool</th>
+              <th>write file name</th>
+              <th>write line #</th>
+              <th>write symbol position</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for value in val.keys() %} {% for intval in val[value].keys() %}
+            {% for value1 in val[value][intval].values() %}
+            <tr>
+              {% for value2 in value1.values() %}
+              <td>{{value2}}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %} {% endfor %}
+          </tbody>
+          {% endfor %}
+        </table>
+        {% endif %}
       </div>
     </div>
     {% endif %}
