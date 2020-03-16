@@ -67,7 +67,7 @@ def upload():
             "gcc -g -fopenmp -lomp " +
             os.path.join(app.config['UPLOAD_FOLDER'], name) + " -o " +
             os.path.join(app.config['UPLOAD_FOLDER'], "myApp"),
-            "InstrumentMain --program= " +
+            "InstrumentMain --program=" +
             os.path.join(app.config['UPLOAD_FOLDER'], "myApp"),
             os.path.join(app.config['UPLOAD_FOLDER'], "myApp.inst")
         ]
