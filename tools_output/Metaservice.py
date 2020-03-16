@@ -1,6 +1,7 @@
 import json
 import re
 import sys
+import random
 
 
 with open("archerOutput.json") as test:
@@ -53,7 +54,55 @@ for i in range(len(d3)):
         RompVote = 1
         Voteflag += 1
 
-if Voteflag >= 2:
-    print("RDS detected a data race!")
+###Majority vote
 
+if Voteflag >= 2:
+	print("RDS detected a data race by majority!")
+else:
+	print("No data race find")
+
+###Weight vote
+
+Tsanweight = 0.25
+
+Archerweight= 0.25
+
+Inspectorweight = 0.25
+
+Rompweight = 0.25
+
+WeightFlag = Tsanweight * TsanVote + Archerweight * ArcherVote + Inspectorweight * InsepctorVote + Rompweight * RompVote
+
+if WeightFlag >= 0.5:
+	print("RDS detected a data race by weight vote!")
+else:
+	print("No data race find")
+
+###Random vote
+
+RandomFlag = random.randint(1, 4)
+
+if RandomFlag == 1:
+	if ArcherVote == 1:
+		print("RDS detected a data race by random vote!")
+	else:
+		print("No data race find")
+
+if RandomFlag == 2:
+	if TsanVote == 1:
+		print("RDS detected a data race by random vote!")
+	else:
+		print("No data race find")
+
+if RandomFlag == 3:
+	if InsepctorVote == 1:
+		print("RDS detected a data race by random vote!")
+	else:
+		print("No data race find")
+
+if RandomFlag == 4:
+	if RompVote == 1:
+		print("RDS detected a data race by random vote!")
+	else:
+		print("No data race find")
 ###information need to dispaly
