@@ -48,13 +48,29 @@ def WeightVote(obj):
 
 	finalAry = []
 
-	Tsanweight = 0.25
+	Tsanweight = 0.881
 
-	Archerweight= 0.25
+	Archerweight= 0.755
 
-	Inspectorweight = 0.25
+	Inspectorweight = 0.723
 
-	Rompweight = 0.25
+	Rompweight = 0.911
+	
+	Archer = 0
+
+	Inspector = 0
+
+	Tsan = 0
+
+	Romp = 0
+
+	ArcherVote = 0
+
+	InsepctorVote = 0
+
+	TsanVote = 0
+
+	RompVote = 0
 
 	jsAry = []
 	for i in range(len(obj)):
@@ -71,9 +87,10 @@ def WeightVote(obj):
 						js[i] = 'no race'
 			jsAry.append(js)
 	WeightFlag = 0
-
+	x = []
 	for item in jsAry:
 		for key in item.keys():
+			x.append(key)
 			if key == 0:
 				if item[key] != 'no race':
 					ArcherVote = 1
@@ -95,9 +112,27 @@ def WeightVote(obj):
 				else:
 					RompVote = 0
 
-	InsepctorVote = 0
+	for item in x:
+		if item == 0:
+			Archer = 1
+		if item == 1:
+			Inspector = 1
+		if item == 2:
+			Tsan = 1
+		if item == 3:
+			Romp = 1
 
-	WeightFlag = Tsanweight * TsanVote + Archerweight * ArcherVote + Inspectorweight * InsepctorVote + Rompweight * RompVote
+	Tsanweight = Tsanweight * Tsan
+
+	Archerweight = Archerweight * Archer
+
+	Inspectorweight = Inspectorweight * Inspector
+
+	Rompweight = Rompweight * Romp
+
+	Sumweight = Tsanweight + Archerweight + Inspectorweight + Rompweight
+		
+	WeightFlag = (Tsanweight/Sumweight) * TsanVote + (Archerweight/Sumweight) * ArcherVote + (Inspectorweight/Sumweight) * InsepctorVote + (Rompweight/Sumweight) * RompVote
 
 	if WeightFlag >= 0.5:
 		print("RDS detected a data race by weight vote!")
@@ -155,7 +190,6 @@ def RandomVote(obj):
 
 	r = json.dumps(js)
 	return(r)
-
 """
 jsonTsan = {
      "0": {
@@ -596,4 +630,3 @@ WeightVote(obj)
 
 RandomVote(obj)
 """
-
