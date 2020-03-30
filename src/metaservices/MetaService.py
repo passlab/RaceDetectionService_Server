@@ -6,6 +6,7 @@ import random
 def majorityVote(obj):
 	VoteNum = 0
 	jsAry = []
+	finalAry = []
 	for i in range(len(obj)):
 		if obj[i] != None :
 			js = {}
@@ -29,11 +30,23 @@ def majorityVote(obj):
 		for item in jsAry:
 			for key in item.keys():
 				if item[key] != 'no race':
-					print(item[key])
+					js = {}
+					js['race'] = "true"
+					js['method'] = "Majority Vote"
+					js['race information'] = item[key]
+					finalAry.append(js)
 	else:
 		print("No data race find")
+	js = {}
+	for i in range(len(finalAry)):
+		js[i] = finalAry[i]
+
+	r = json.dumps(js)
+	return(r)
 
 def WeightVote(obj):
+
+	finalAry = []
 
 	Tsanweight = 0.25
 
@@ -91,11 +104,22 @@ def WeightVote(obj):
 		for item in jsAry:
 			for key in item.keys():
 				if item[key] != 'no race':
-					print(item[key])
+					js = {}
+					js['race'] = "true"
+					js['method'] = "Weight Vote"
+					js['race information'] = item[key]
+					finalAry.append(js)
 	else:
 		print("No data race find")
+	js = {}
+	for i in range(len(finalAry)):
+		js[i] = finalAry[i]
+
+	r = json.dumps(js)
+	return(r)
 
 def RandomVote(obj):
+	finalAry = []
 	VoteNum = 0
 	jsAry = []
 	for i in range(len(obj)):
@@ -118,12 +142,22 @@ def RandomVote(obj):
 	for key in jsAry[RandomFlag].keys():
 		if jsAry[RandomFlag][key] != 'no race':
 			print("RDS detected a data race by random vote!")
-			print(jsAry[RandomFlag][key])
+			js = {}
+			js['race'] = "true"
+			js['method'] = "Random Vote"
+			js['race information'] = jsAry[RandomFlag][key]
+			finalAry.append(js)
 		else:
 			print("No data race find")
+		js = {}
+	for i in range(len(finalAry)):
+		js[i] = finalAry[i]
 
+	r = json.dumps(js)
+	return(r)
 
-jsonTsan = """{
+"""
+jsonTsan = {
      "0": {
         "0": {
             "Memory Address": "0x7ffe4e2902a0",
@@ -486,7 +520,7 @@ jsonTsan = """{
             "write file name1": "DRB116-target-teams-orig-yes.c",
             "write line #1": "66",
             "write column #1": -1,
-            "tool": "ThreadSanitier"
+            "tool": "romp"
         },
         "1": {
             "Memory Address": "0x7b2000004000",
@@ -499,9 +533,9 @@ jsonTsan = """{
             "Write_thread1": "thread T1"
         }
     }
-     }"""
+     }
 
-jsonArcher = """{
+jsonArcher = {
      "0": {
         
     },
@@ -546,7 +580,7 @@ jsonArcher = """{
     },
     "14": {
     }
-    }"""
+    }
 
 data = json.loads(jsonTsan)
 
@@ -561,4 +595,5 @@ majorityVote(obj)
 WeightVote(obj)
 
 RandomVote(obj)
+"""
 
