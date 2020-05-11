@@ -31,9 +31,9 @@ def majorityVote(obj):
 			for key in item.keys():
 				if item[key] != 'no race':
 					js = {}
-					js['race'] = "true"
-					js['method'] = "Majority Vote"
-					js['race information'] = item[key]
+					js['program'] = "a.out"
+					js['aggregate_policy'] = "Majority Vote"
+					js['data_races'] = item[key]
 					finalAry.append(js)
 	else:
 		print("No data race find")
@@ -140,9 +140,9 @@ def WeightVote(obj):
 			for key in item.keys():
 				if item[key] != 'no race':
 					js = {}
-					js['race'] = "true"
-					js['method'] = "Weight Vote"
-					js['race information'] = item[key]
+					js['program'] = "a.out"
+					js['aggregate_policy'] = "Weight Vote"
+					js['data_races'] = item[key]
 					finalAry.append(js)
 	else:
 		print("No data race find")
@@ -360,9 +360,9 @@ def DirectiveWeightVote(obj,directive):
 			for key in item.keys():
 				if item[key] != 'no race':
 					js = {}
-					js['race'] = "true"
-					js['method'] = "Weight Vote"
-					js['race information'] = item[key]
+					js['program'] = "a.out"
+					js['aggregate_policy'] = "Weight Vote"
+					js['data_races'] = item[key]
 					finalAry.append(js)
 	else:
 		print("No data race find")
@@ -421,9 +421,9 @@ def UnionVote(obj):
 				print("RDS detected a data race by union vote!")
 				for key in jsAry[i].keys():
 					js = {}
-					js['race'] = "true"
-					js['method'] = "Weight Vote"
-					js['race information'] = jsAry[i][key]
+					js['program'] = "a.out"
+					js['aggregate_policy'] = "Weight Vote"
+					js['data_races'] = jsAry[i][key]
 					finalAry.append(js)
 				break
 		if i == 4:
@@ -481,9 +481,9 @@ def IntersectionVote(obj):
 			if vote[i] == 1:
 				for key in jsAry[i].keys():
 					js = {}
-					js['race'] = "true"
-					js['method'] = "Weight Vote"
-					js['race information'] = jsAry[i][key]
+					js['program'] = "a.out"
+					js['aggregate_policy'] = "Weight Vote"
+					js['data_races'] = jsAry[i][key]
 					finalAry.append(js)
 				
 			else :
@@ -523,12 +523,15 @@ def RandomVote(obj):
 		if jsAry[RandomFlag][key] != 'no race':
 			print("RDS detected a data race by random vote!")
 			js = {}
-			js['race'] = "true"
-			js['method'] = "Random Vote"
-			js['race information'] = jsAry[RandomFlag][key]
+			js['program'] = "a.out"
+			js['aggregate_policy'] = "Random Vote"
+			js['data_races'] = jsAry[RandomFlag][key]
 			finalAry.append(js)
 		else:
 			print("No data race find")
+			js['program'] = "a.out"
+			js['aggregate_policy'] = "Random Vote"
+			js['data_races'] = {}
 
 	js = {}
 	for i in range(len(finalAry)):
