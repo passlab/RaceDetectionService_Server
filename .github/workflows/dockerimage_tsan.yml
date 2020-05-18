@@ -24,7 +24,7 @@ jobs:
     - name: Push the Docker image
       run: |
         echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_ID }} --password-stdin
-        docker tag rds_server racedetectionservice/rds:tsan-server
-        docker push racedetectionservice/rds:tsan-server
-        docker tag rds_tool racedetectionservice/rds:tsan-tool
-        docker push racedetectionservice/rds:tsan-tool
+        docker tag rds_server racedetection/rds:tsan-server
+        docker push racedetection/rds:tsan-server
+        docker tag rds_tool racedetection/rds:tsan-tool
+        docker push racedetection/rds:tsan-tool

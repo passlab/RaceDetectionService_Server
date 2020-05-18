@@ -1,4 +1,4 @@
-from flask import make_response, Flask, request, render_template, redirect, Response
+from flask import Flask, jsonify, make_response, request, render_template, redirect, Response
 from subprocess import PIPE, run
 import os
 import time
@@ -16,8 +16,8 @@ def api_root():
 
 
 # benchmark API for TSan
-@app.route('/upload', methods=['GET', 'POST'])
-def upload():
+@app.route('/requests', methods=['GET', 'POST', 'DELETE'])
+def requests():
     try:
         os.makedirs(UPLOAD_FOLDER)
     except FileExistsError:
@@ -51,11 +51,11 @@ def upload():
         if os.path.exists(logFile):
             jsonResult = logjson.jsonify(logFile)
         else:
-            jsonResult = flask.jsonify({})
-        if request.args.get('type') == 'json':
-            return make_response(jsonResult, 200)
+            jsonResult = jsonify({})
+        if request.args.get('type') == 'web':
+            return render_template('index.html', val=jsonResult)
         else:
-            return render_template('index.html', val=output.split('\n'))
+            return make_response(jsonResult, 200)
 
 
 if __name__ == '__main__':
