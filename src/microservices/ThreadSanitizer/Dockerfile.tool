@@ -37,21 +37,23 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /var/cache/*
 
-# Install API framework
-RUN apt-get update && \
-    apt-get install -y \
-    python3-flask
-
 # Setup environment.
 RUN ln -s /usr/bin/clang-10 /usr/bin/clang
 RUN ln -s /usr/bin/clang++-10 /usr/bin/clang++
 ENV CC /usr/bin/clang
 ENV CXX /usr/bin/clang++
 
+COPY --chown=rds:rds [".bashrc", "/home/rds/"]
+COPY --chown=rds:rds ["run.sh", "/home/rds/"]
+
 # Switch user and working directory.
 USER rds
 WORKDIR /home/rds
-COPY [".bashrc", "/home/rds/"]
+
+# Use dataracebench as a wrapper to perform detection
+RUN git clone https://github.com/RaceDetectionService/dataracebench.git && \
+    rm -rf /home/rds/dataracebench/micro-benchmarks/* && \
+    rm -rf /home/rds/dataracebench/results/*
 
 # Define default command.
 CMD ["bash"]
