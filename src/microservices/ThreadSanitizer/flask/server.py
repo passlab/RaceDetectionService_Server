@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, Response
+from flask import make_response, Flask, request, render_template, redirect, Response
 from subprocess import PIPE, run
 import os
 import time
@@ -53,7 +53,7 @@ def upload():
         else:
             jsonResult = flask.jsonify({})
         if request.args.get('type') == 'json':
-            return flask.make_response(jsonResult, 200)
+            return make_response(jsonResult, 200)
         else:
             return render_template('index.html', val=output.split('\n'))
 
