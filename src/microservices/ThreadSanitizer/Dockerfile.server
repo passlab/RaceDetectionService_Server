@@ -15,6 +15,7 @@ RUN apk update && \
     bash \
     py3-flask \
     py3-requests \
+    py3-waitress \
     python3
 
 # Setup environment.

@@ -1,11 +1,9 @@
 from flask import Flask, request, render_template, redirect, Response
 from subprocess import PIPE, run
-import flask
 import os
-import json
-import subprocess
 import time
 from werkzeug import secure_filename
+from waitress import serve
 import logjson
 UPLOAD_FOLDER = '/tmp/task'
 app = Flask(__name__)
@@ -18,32 +16,6 @@ def api_root():
 
 
 # benchmark API for TSan
-@app.route('/benchmark', methods=['POST'])
-def benchmark():
-    print("request received")
-
-    # Running first command
-    cmd = "sh /home/rds/dataracebench/check-data-races.sh"
-    tstart = time.time()
-    result = run(cmd.split(),
-                 stdout=PIPE,
-                 stderr=subprocess.STDOUT,
-                 universal_newlines=True)
-    tend = time.time()
-    benchmarkTime = tend - tstart
-    print(benchmarkTime)
-    if (result.returncode == 1):
-        str = result.stderr
-    else:
-        str = result.stdout
-    print(str)
-
-    with open(os.path.join(app.config['UPLOAD_FOLDER'], "tsanbenchmark.txt"),
-              "w") as tsanfile:
-        print("Benchmark time: ", benchmarkTime, file=tsanfile)
-    return flask.make_response(flask.jsonify({'tsan': json.loads(str)}), 200)
-
-
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     try:
@@ -68,7 +40,6 @@ def upload():
         # 2. Copy the received input file to the benchmark folder.
         # 3. Run the test and generate the log file.
         cmd_list = [
-            #"/home/rds/rds-tsan/check.sh"
             "/flask/check.sh " + name
          ]
         for cmd in cmd_list:
@@ -88,4 +59,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    serve(app, host="0.0.0.0", port=5000)
