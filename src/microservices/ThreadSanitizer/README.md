@@ -53,13 +53,13 @@ docker run --privileged --name dind-server -d -e DOCKER_TLS_CERTDIR="" docker:st
 ```
 
 To deploy the TSan server, we also need to map the host port to the docker container port.
-For example, assume we have an available Flask server running on the port 5000 in the container. The port 5010 on the host is assigned to the microservice. While creating the container, the port mapping is needed as follows.
+For example, assume we have an available Flask server running on the port 5000 in the container. The port 5030 on the host is assigned to the microservice. While creating the container, the port mapping is needed as follows.
 
 ```bash
 docker pull racedetectionservice/rds:tsan-server
-docker run --rm -it -p 5010:5000 -d --link dind-server:docker racedetectionservice/rds:tsan-server /flask/start.sh
+docker run --rm -it -p 5030:5000 -d --link dind-server:docker racedetectionservice/rds:tsan-server /flask/start.sh
 ```
 
-Finally, on the host browser we can access the microservice at `127.0.0.1:5010`. For other external machine, it can be accessed at `<host_ip>:5010`.
+Finally, on the host browser we can access the microservice at `127.0.0.1:5030`. For other external machine, it can be accessed at `<host_ip>:5030`.
 
 
