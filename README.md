@@ -1,4 +1,8 @@
-## Deployment the RaceDetectionService(RDS) enviorment to use
+# Introduction
+
+RaceDetectionService, a cloud-based metaservice aimed at providing convenient and high quality data race detection for user's code. Our work present and experiment a new direction of creating and using software tools for parallel computing, which is to use service-oriented architecture and standard APIs to enhance the interoperability of tools. 
+
+# Deployment the RaceDetectionService(RDS) enviorment to use
 
   There two different ways to set up your RDS. You can set up RDS by yourslef on your local machine or you can set up RDS     enviorment by our docker image. 
 
@@ -19,3 +23,7 @@
 2. Set up RDS enviorment via docker
 
       [Instruction of local deployment](deployment.md)
+
+# Acknowledgement
+
+This work was performed under the auspices of the U.S. Department of Energy by Lawrence Livermore National Laboratory under Contract DE-AC52-07NA27344. Work on the design of the framework was supported by the U.S. DOE Advanced Scientific Computing Program (ASCR SC-21).
