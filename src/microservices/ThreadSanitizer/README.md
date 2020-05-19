@@ -5,7 +5,7 @@ A simple web interface for quick demo is available at https://racedetection.org/
 The API call can be used as follows. It will return a JSON response.
 
 ```bash
-curl -F 'file=@DRB003-antidep2-orig-yes.c' https://racedetecion.org/requests/tsan 
+curl -F 'file=@DRB003-antidep2-orig-yes.c' https://racedetection.org/requests/tsan 
 ```
 
 # Deployment
