@@ -15,7 +15,7 @@ def api_root():
     return render_template('index.html', val="")
 
 
-# benchmark API for TSan
+# microservice API for TSan
 @app.route('/requests', methods=['GET', 'POST', 'DELETE'])
 def requests():
     try:

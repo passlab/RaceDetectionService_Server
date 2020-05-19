@@ -1,3 +1,12 @@
+# Usage
+
+A simple web interface for quick demo is available at https://racedetection.org/tsan.
+
+The API call can be used as follows. It will return a JSON response.
+
+```bash
+curl -F 'file=@DRB003-antidep2-orig-yes.c' https://racedetecion.org/requests/tsan 
+```
 
 # Deployment
 
@@ -15,12 +24,12 @@ sudo apt install docker.io
 ### Get the docker image of TSan
 
 ```bash
-docker pull racedetectionservice/rds:tsan-tool
+docker pull racedetection/rds:tsan-tool
 ```
 #### 1. Create a container
 
 ```bash
-docker run -it --name rds_tsan racedetectionservice/rds:tsan-tool bash
+docker run -it --name rds_tsan racedetection/rds:tsan-tool bash
 ```
 
 #### 2. Start a container
@@ -56,8 +65,8 @@ To deploy the TSan server, we also need to map the host port to the docker conta
 For example, assume we have an available Flask server running on the port 5000 in the container. The port 5030 on the host is assigned to the microservice. While creating the container, the port mapping is needed as follows.
 
 ```bash
-docker pull racedetectionservice/rds:tsan-server
-docker run --rm -it -p 5030:5000 -d --link dind-server:docker racedetectionservice/rds:tsan-server /flask/start.sh
+docker pull racedetection/rds:tsan-server
+docker run --rm -it -p 5030:5000 -d --link dind-server:docker racedetection/rds:tsan-server /flask/start.sh
 ```
 
 Finally, on the host browser we can access the microservice at `127.0.0.1:5030`. For other external machine, it can be accessed at `<host_ip>:5030`.

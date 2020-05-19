@@ -1,10 +1,5 @@
 
-# Environment for the microservice ThreadSanitizer.
-# Clang 6 is installed from the Ubuntu repository.
-# Clang 10 is installed from the official LLVM repository.
-# To use Clang 10, a "-10" postfix should be added in most cases.
-# e.g. clang -> clang-10, clang++ -> clang++-10
-# Please check /usr/bin for all the available Clang 10 tools.
+# Flask server for the microservice ThreadSanitizer.
 
 # Pull base image.
 FROM docker:stable
@@ -21,6 +16,6 @@ RUN apk update && \
 # Setup environment.
 COPY ["flask", "/flask"]
 
-# Define default command.
 # The official Docker image has an ENTRYPOINT that works well with rootless dind.
+# No other default command should be added.
 
