@@ -81,7 +81,7 @@ RUN cd $ARCHER_BUILD && \
     -DLLVM_TOOL_ARCHER_BUILD=OFF \
     -DLLVM_TARGETS_TO_BUILD=Native \
     ../llvm_src && \
-    ninja -j12 -l12 && \
+    ninja -j2 -l2 && \
     cd ..
 
 ENV LD_LIBRARY_PATH $ARCHER_BUILD/llvm_bootstrap/lib:${LD_LIBRARY_PATH}
@@ -106,7 +106,7 @@ RUN cd $ARCHER_BUILD && \
     -D LIBOMP_OMPT_BLAME=on \
     -D LIBOMP_OMPT_TRACE=on \
     ../llvm_src && \
-    ninja -j12 -l12
+    ninja -j2 -l2
 
 RUN cd $ARCHER_BUILD && \
     cd llvm_build && \
@@ -116,11 +116,6 @@ RUN cd $ARCHER_BUILD && \
 ENV PATH ${LLVM_INSTALL}/bin:${PATH}
 ENV LD_LIBRARY_PATH ${LLVM_INSTALL}/lib:${LD_LIBRARY_PATH}
 
-# Install API framework
-RUN apt-get update && \
-    apt-get install -y \
-    python3-flask
-
 # Setup environment.
 ENV CC $LLVM_PATH/bin/clang
 ENV CXX $LLVM_PATH/bin/clang++
@@ -128,7 +123,11 @@ ENV CXX $LLVM_PATH/bin/clang++
 # Switch user and working directory.
 USER rds
 WORKDIR /home/rds
-COPY [".bashrc", "/home/rds/"]
+
+# Use dataracebench as a wrapper to perform detection
+RUN git clone https://github.com/RaceDetectionService/dataracebench.git && \
+    rm -rf /home/rds/dataracebench/micro-benchmarks/* && \
+    rm -rf /home/rds/dataracebench/results/*
 
 # Define default command.
 CMD ["bash"]

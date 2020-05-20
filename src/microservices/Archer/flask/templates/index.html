@@ -1,0 +1,15 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <form action="/requests/archer?type=web" method="POST" enctype="multipart/form-data" >
+            <input type="file" name="file" />
+            <input id="process_input" type="submit" />
+        </form>
+        {% if (val) %}
+          <table>
+            <td> {{ val }} </td>
+          </table>
+        {% endif %}
+    </body>
+</html>

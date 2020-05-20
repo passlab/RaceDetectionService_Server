@@ -1,0 +1,30 @@
+name: Docker Image CI Archer
+
+on:
+  push:
+    branches: [ master ]
+    paths: 
+      - 'src/microservices/Archer/**'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build the Docker image
+      run: |
+        cd $GITHUB_WORKSPACE/src/microservices/Archer
+        docker build . --file Dockerfile.server --tag rds_server
+        docker build . --file Dockerfile.tool --tag rds_tool
+
+    - name: Push the Docker image
+      run: |
+        echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_ID }} --password-stdin
+        docker tag rds_server racedetection/rds:archer-server
+        docker push racedetection/rds:archer-server
+        docker tag rds_tool racedetection/rds:archer-tool
+        docker push racedetection/rds:archer-tool
