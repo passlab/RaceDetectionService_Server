@@ -1,11 +1,11 @@
 # Usage
 
-A simple web interface for quick demo is available at https://racedetection.org/tsan.
+A simple web interface for quick demo is available at https://tsan.racedetection.org.
 
 The API call can be used as follows. It will return a JSON response.
 
 ```bash
-curl -F 'file=@DRB003-antidep2-orig-yes.c' https://racedetection.org/requests/tsan 
+curl -F 'file=@DRB003-antidep2-orig-yes.c' https://tsan.racedetection.org/requests
 ```
 
 # Deployment
@@ -50,7 +50,8 @@ Follow the official guide or other instructions.
 
 https://clang.llvm.org/docs/ThreadSanitizer.html
 
-https://github.com/passlab/RaceDetectionService/blob/master/tools_output/README.md
+https://github.com/RaceDetectionService/RaceDetectionService_Server/blob/master/tools_output/README.md
+
 
 ## TSan microservice development
 
