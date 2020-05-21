@@ -1,11 +1,11 @@
 # Usage
 
-A simple web interface for quick demo is available at https://racedetection.org/archer.
+A simple web interface for quick demo is available at https://archer.racedetection.org.
 
 The API call can be used as follows. It will return a JSON response.
 
 ```bash
-curl -F 'file=@DRB003-antidep2-orig-yes.c' https://racedetection.org/requests/archer 
+curl -F 'file=@DRB003-antidep2-orig-yes.c' https://archer.racedetection.org/requests
 ```
 
 # Deployment
