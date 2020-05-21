@@ -6,12 +6,12 @@ FROM docker:stable
 
 # Install API framework
 RUN apk update && \
-    apk add \
-    bash \
-    py3-flask \
-    py3-requests \
-    py3-waitress \
-    python3
+    apk add --no-cache \
+      bash \
+      py3-flask \
+      py3-requests \
+      py3-waitress \
+      python3
 
 # Setup environment.
 COPY ["flask", "/flask"]

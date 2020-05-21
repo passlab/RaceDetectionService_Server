@@ -120,6 +120,9 @@ ENV LD_LIBRARY_PATH ${LLVM_INSTALL}/lib:${LD_LIBRARY_PATH}
 ENV CC $LLVM_PATH/bin/clang
 ENV CXX $LLVM_PATH/bin/clang++
 
+COPY --chown=rds:rds [".bashrc", "/home/rds/"]
+COPY --chown=rds:rds ["run.sh", "/home/rds/"]
+
 # Switch user and working directory.
 USER rds
 WORKDIR /home/rds
