@@ -8,7 +8,7 @@ RaceDetectionService, a cloud-based metaservice aimed at providing convenient an
 
 1. Set up RDS enviorment via your desktop or server.
 
-   First, install four tools by following instruction.
+   First, install four data race detection tools by following instruction.
 
       [Instruction for install four tools](InstallTool.md)
    
