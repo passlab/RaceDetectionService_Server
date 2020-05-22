@@ -1,10 +1,10 @@
 ## Introduction
 
-RaceDetectionService, a cloud-based metaservice aimed at providing convenient and high quality data race detection for user's code. Our work present and experiment a new direction of creating and using software tools for parallel computing, which is to use service-oriented architecture and standard APIs to enhance the interoperability of tools. 
+RaceDetectionService, a cloud-based metaservice aimed at providing convenient and high quality data race detection for user's OpenMP codes. Our work present and experiment a new direction of creating and using software tools for parallel computing, which is to use service-oriented architecture, cloud-computing and standard APIs to enhance the interoperability of tools. 
 
 ## Deployment the RaceDetectionService(RDS) enviorment to use
 
-  There two different ways to set up your RDS. You can set up RDS by yourslef on your local machine or you can set up RDS     enviorment by our docker image. 
+  There two different ways to set up your RDS. You can set up RDS by yourslef on your local machine or you can set up RDS enviorment by our docker image (recommended). 
 
 1. Set up RDS enviorment via your desktop or server.
 
