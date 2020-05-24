@@ -8,12 +8,6 @@ FROM ubuntu:18.04
 RUN groupadd -g 9999 rds && \
     useradd -r -u 9999 -g rds -m -d /home/rds rds
 
-# Install API framework
-RUN apt-get update && \
-    apt-get install -y \
-    python3-flask \
-    python3-requests
-
 # Install packages.
 RUN apt-get update && \
     apt-get install -y \
@@ -39,14 +33,21 @@ RUN apt-get update && \
 # Add user
 RUN useradd -r -u 9990 -g rds -m -d /home/awang15 awang15
 
+COPY --chown=rds:rds [".spack", "/home/awang15/.spack"]
+COPY --chown=rds:rds ["spack", "/home/awang15/Projects/romp/spack"]
+
+COPY --chown=rds:rds [".bashrc", "/home/rds/"]
+COPY --chown=rds:rds ["run.sh", "/home/rds/"]
+
 # Switch user and working directory.
 USER rds
 WORKDIR /home/rds
 ENV PATH /home/awang15/Projects/romp/spack/bin:$PATH
 
-COPY [".spack", "/home/awang15/.spack"]
-COPY ["spack", "/home/awang15/Projects/romp/spack"]
-COPY [".bashrc", "/home/rds/"]
+# Use dataracebench as a wrapper to perform detection
+RUN git clone https://github.com/RaceDetectionService/dataracebench.git && \
+    rm -rf /home/rds/dataracebench/micro-benchmarks/* && \
+    rm -rf /home/rds/dataracebench/results/*
 
 # Define default command.
 CMD ["bash"]

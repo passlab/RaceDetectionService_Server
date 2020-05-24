@@ -53,7 +53,7 @@ https://github.com/PRUNERS/archer
 
 ## Archer microservice development
 
-Flask framework under python3 has been installed in the docker image of Tsan server.
+Flask framework under python3 has been installed in the docker image of Archer server.
 Since Archer server is running in rootless dind mode, we have to run the official rootless dind image as docker daemon provider.
 
 ```bash

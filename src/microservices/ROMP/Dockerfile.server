@@ -1,0 +1,21 @@
+
+# Flask server for the microservice ROMP.
+
+# Pull base image.
+FROM docker:stable
+
+# Install API framework
+RUN apk update && \
+    apk add --no-cache \
+      bash \
+      py3-flask \
+      py3-requests \
+      py3-waitress \
+      python3
+
+# Setup environment.
+COPY ["flask", "/flask"]
+
+# The official Docker image has an ENTRYPOINT that works well with rootless dind.
+# No other default command should be added.
+
