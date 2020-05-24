@@ -5,6 +5,7 @@ on:
     branches: [ master ]
     paths: 
       - 'src/microservices/ROMP/**'
+      - '!src/microservices/ROMP/README.md'
 
 jobs:
 
@@ -17,7 +18,7 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        cd $GITHUB_WORKSPACE/src/microservices/Archer
+        cd $GITHUB_WORKSPACE/src/microservices/ROMP
         git clone https://github.com/ouankou/rds-romp.git
         7z x rds-romp/spack/spack.7z.001 -o.
         docker build . --file Dockerfile.server --tag rds_server

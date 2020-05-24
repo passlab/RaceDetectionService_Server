@@ -5,6 +5,7 @@ on:
     branches: [ master ]
     paths: 
       - 'src/microservices/ThreadSanitizer/**'
+      - '!src/microservices/ThreadSanitizer/README.md'
 
 jobs:
 
