@@ -2,7 +2,7 @@
 
 ## Install Archer: 
 
-Creat the floder for archer and archer build
+Creat the folder for archer and archer build
 
 ```	
  	export ARCHER_BUILD=$PWD/ArcherBuild
